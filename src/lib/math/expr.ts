@@ -36,6 +36,9 @@ export function normalise(src: string): string {
     .replace(/√/g, "sqrt")
     .replace(/∛/g, "cbrt")
     .replace(/\*\*/g, "^")
+    // log with a base: log_2(x), log_{1/2} x, log2(8) → change of base
+    .replace(/log_?\{?(\d+(?:[./]\d+)?)\}?\s*\(([^()]*)\)/g, "(log($2)/log($1))")
+    .replace(/log_\{?(\d+(?:[./]\d+)?)\}?\s*([a-zA-Z0-9.]+)/g, "(log($2)/log($1))")
     .replace(/[[{]/g, "(")
     .replace(/[\]}]/g, ")");
 }

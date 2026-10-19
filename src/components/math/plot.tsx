@@ -192,9 +192,9 @@ export function Guide({ x, y, colour = "var(--text-muted)", label }: { x?: numbe
   return null;
 }
 
-export function Segment({ x1, y1, x2, y2, colour = "var(--curve-3)", dashed, width = 2 }: { x1: number; y1: number; x2: number; y2: number; colour?: string; dashed?: boolean; width?: number }) {
+export function Segment({ x1, y1, x2, y2, colour = "var(--curve-3)", dashed, width = 2, cap = "round" }: { x1: number; y1: number; x2: number; y2: number; colour?: string; dashed?: boolean; width?: number; cap?: "round" | "butt" }) {
   const { sx, sy } = useScale();
-  return <line x1={sx(x1)} y1={sy(y1)} x2={sx(x2)} y2={sy(y2)} stroke={colour} strokeWidth={width} strokeDasharray={dashed ? "5 4" : undefined} strokeLinecap="round" />;
+  return <line x1={sx(x1)} y1={sy(y1)} x2={sx(x2)} y2={sy(y2)} stroke={colour} strokeWidth={width} strokeDasharray={dashed ? "5 4" : undefined} strokeLinecap={cap} />;
 }
 
 /** Shade the x-axis where a condition holds (for inequalities). */

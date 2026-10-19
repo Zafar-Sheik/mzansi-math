@@ -14,6 +14,9 @@ Open **Toolkit**. Every interactive tool is there, ready for the projector:
 - **Money lab** and **Investment timeline** – simple vs compound, depreciation, nominal vs effective, and multi-step timelines.
 - **Circle theorem explorer** – drag points round the circle while the class watches the angles stay in proportion. A great lead-in to the proofs.
 - **CAST explorer** and **Trig graph lab** – reduction formulae and the effects of a, k, p and q, live.
+- **Derivative lab** – shrink h and watch the secant become the tangent: first principles you can *see*.
+- **Cubic lab** and **Optimisation lab** – stationary points and concavity live, and "drag to find the biggest box" before the calculus.
+- **Annuity lab** – change the rate or the term on a loan and watch the total interest jump. Great for a life-skills conversation.
 
 ## 3. Set a lesson as homework
 

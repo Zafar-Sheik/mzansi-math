@@ -119,3 +119,14 @@ describe("trig input", () => {
     expect(checkAnswer("cos x", { answer: "-sin(x)", kind: "expr" }).ok).toBe(false);
   });
 });
+
+describe("logs", () => {
+  it("reads logs with a base", () => {
+    expect(value("log_2(8)")).toBeCloseTo(3);
+    expect(value("log2(32)")).toBeCloseTo(5);
+    expect(value("log_{1/2}(4)")).toBeCloseTo(-2);
+    expect(value("log 1000")).toBeCloseTo(3);
+    expect(checkAnswer("y = log_3 x", { answer: "log(x)/log(3)", kind: "expr" }).ok).toBe(true);
+    expect(checkAnswer("log_2(x)", { answer: "log(x)/log(3)", kind: "expr" }).ok).toBe(false);
+  });
+});

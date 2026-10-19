@@ -18,7 +18,7 @@ It is the sister app of **CodeMzansi** (IT) and **GeoMzansi** (Geography): same 
 
 ## How it's being built
 
-The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 adds **Grade 11 Geometry & Trigonometry** – so all of Grade 11 (Algebra, Geometry, Trig) is now live. Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
+The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 added **Grade 11 Geometry & Trigonometry**, so all of Grade 11 is live; Phase 3 adds **Grade 12 Algebra & Calculus** (sequences & series, inverses & logs, annuities, polynomials and differential calculus). Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
 
 ## Who it's for
 

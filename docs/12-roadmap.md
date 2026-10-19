@@ -31,13 +31,21 @@ MathsMzansi covers the whole CAPS Grade 11 & 12 syllabus for **Algebra, Geometry
 
 **Engine:** the answer checker understands degrees (`°`), `θ` and `sin^2 x`, and checks trig expressions over a wide range of angles.
 
-## Phase 3 – Grade 12 Algebra & Calculus
+## Phase 3 – Grade 12 Algebra & Calculus ✅
 
-- Sequences & series (incl. sigma notation, sum to infinity) – *series visualiser*
-- Functions & inverses, logarithms – *reflection-in-y = x tool*
-- Finance & annuities (future/present value, loans, sinking funds) – *loan amortisation explorer*
-- Polynomials (remainder & factor theorems, cubics)
-- Differential calculus (first principles, rules, tangents, cubic graphs, optimisation) – *tangent/derivative explorer, cubic sketcher, optimisation lab*
+**Content – Grade 12 (15 lessons):**
+
+- Sequences & Series (3 lessons): arithmetic sequences & series · geometric sequences & series · sigma notation & sum to infinity
+- Functions & Inverses (2 lessons): functions & their inverses · exponential & log functions
+- Finance & Annuities (3 lessons): future value & sinking funds · present value, loans & outstanding balances · finding n with logs
+- Polynomials (2 lessons): remainder & factor theorems · factorising & solving cubics
+- Differential Calculus (5 lessons): limits & first principles · rules & tangents · cubic graphs · optimisation · rates of change
+
+**Tools:** series lab (partial sums racing towards S∞), inverse lab (reflect in y = x, with domain restriction), annuity lab (savings and loans, with an amortisation table), polynomial lab (synthetic division), derivative lab (secant → tangent as h → 0), cubic lab (stationary points, concavity, inflection), optimisation lab (the open box).
+
+**Practice:** 15 new question generators (sequences, sigma, inverses, logs, annuities, loans, remainder theorem, cubics, first principles, derivatives, tangents, stationary points, rates of change). 10 new Paper 1 exam questions.
+
+**Engine:** the answer checker understands `log_b(x)` (change of base).
 
 ## Phase 4 – Grade 12 Geometry & Trigonometry
 

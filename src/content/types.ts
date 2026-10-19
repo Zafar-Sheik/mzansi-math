@@ -122,7 +122,14 @@ export type WidgetName =
   | "solid-viewer"
   | "unit-circle"
   | "trig-graph-lab"
-  | "triangle-solver";
+  | "triangle-solver"
+  | "series-lab"
+  | "inverse-lab"
+  | "annuity-lab"
+  | "polynomial-lab"
+  | "derivative-lab"
+  | "cubic-lab"
+  | "optimisation-lab";
 
 export interface Chunk {
   id: string;

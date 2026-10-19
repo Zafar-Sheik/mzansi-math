@@ -29,6 +29,13 @@ export const WIDGET_CATALOGUE: { name: WidgetName; title: string; topic: Topic; 
   { name: "unit-circle", title: "CAST & trig ratios", topic: "g11-trig", description: "Drag P round the circle: x, y, r, signs, reference angles and reduction formulae." },
   { name: "trig-graph-lab", title: "Trig graph lab", topic: "g11-trig", description: "sin, cos and tan with amplitude, period and shifts." },
   { name: "triangle-solver", title: "Triangle solver", topic: "g11-trig", description: "Sine, cosine and area rules with the working – drawn to scale." },
+  { name: "series-lab", title: "Sequence & series lab", topic: "g12-sequences", description: "Arithmetic and geometric terms, running sums and the sum to infinity." },
+  { name: "inverse-lab", title: "Inverse functions", topic: "g12-functions", description: "Reflect f in y = x – lines, restricted parabolas, exponentials ↔ logs." },
+  { name: "annuity-lab", title: "Annuity lab", topic: "g12-finance", description: "Savings (future value) and loans (present value), month by month." },
+  { name: "polynomial-lab", title: "Polynomial lab", topic: "g12-polynomials", description: "Synthetic division, the remainder theorem and the factor theorem." },
+  { name: "derivative-lab", title: "From secant to tangent", topic: "g12-calculus", description: "Watch the average gradient become the derivative as h → 0." },
+  { name: "cubic-lab", title: "Cubic sketcher", topic: "g12-calculus", description: "Roots, stationary points, inflection and f′ – live." },
+  { name: "optimisation-lab", title: "Optimisation: the open box", topic: "g12-calculus", description: "Find the cut that makes the biggest box – by dragging, then by calculus." },
   { name: "drill", title: "Endless drill (everything)", topic: "g11-exponents", description: "Randomly generated questions from every skill so far, with working." },
 ];
 

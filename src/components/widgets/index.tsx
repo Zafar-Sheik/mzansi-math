@@ -25,6 +25,13 @@ const REGISTRY: Record<WidgetName, React.ComponentType<Record<string, unknown>>>
   "unit-circle": dynamic(() => import("./unit-circle").then((m) => m.UnitCircle as never), { loading }),
   "trig-graph-lab": dynamic(() => import("./trig-graph-lab").then((m) => m.TrigGraphLab as never), { loading }),
   "triangle-solver": dynamic(() => import("./triangle-solver").then((m) => m.TriangleSolver as never), { loading }),
+  "series-lab": dynamic(() => import("./series-lab").then((m) => m.SeriesLab as never), { loading }),
+  "inverse-lab": dynamic(() => import("./inverse-lab").then((m) => m.InverseLab as never), { loading }),
+  "annuity-lab": dynamic(() => import("./annuity-lab").then((m) => m.AnnuityLab as never), { loading }),
+  "polynomial-lab": dynamic(() => import("./polynomial-lab").then((m) => m.PolynomialLab as never), { loading }),
+  "derivative-lab": dynamic(() => import("./derivative-lab").then((m) => m.DerivativeLab as never), { loading }),
+  "cubic-lab": dynamic(() => import("./cubic-lab").then((m) => m.CubicLab as never), { loading }),
+  "optimisation-lab": dynamic(() => import("./optimisation-lab").then((m) => m.OptimisationLab as never), { loading }),
 };
 
 export function Widget({ name, props }: { name: WidgetName; props?: Record<string, unknown> }) {

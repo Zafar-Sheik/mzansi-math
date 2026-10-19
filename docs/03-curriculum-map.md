@@ -42,15 +42,15 @@ Approximate marks per topic (±3) from the DBE examination guidelines – always
 | Measurement | Volume & surface area of solids · Combined solids & scaling | Surface area and volume of right prisms, cylinders, pyramids, cones, spheres and combined objects; effect of multiplying dimensions by k |
 | Trigonometry | Ratios on the Cartesian plane · Reduction formulae · Identities · Equations & the general solution · Graphs · Sine, cosine & area rules | x, y, r definitions and CAST; special angles; reduction formulae (180° ± θ, 360° − θ, −θ, 90° ± θ); tan θ = sin θ / cos θ and sin²θ + cos²θ = 1; general solutions; effects of a, k, p, q on sin, cos, tan graphs; sine, cosine and area rules in 2D |
 
-## Grade 12 – Algebra & Calculus (Phase 3)
+## Grade 12 – Algebra & Calculus (Phase 3 ✅)
 
-| Topic | CAPS content |
-|---|---|
-| Sequences & Series | Arithmetic and geometric sequences and series; sigma notation; Sₙ formulas; sum to infinity and convergence |
-| Functions & Inverses | Definition of a function; inverses of linear, quadratic (restricted domain) and exponential functions; logarithms and log laws |
-| Finance & Annuities | Future and present value annuities; loans and bond repayments; sinking funds; outstanding balance; finding n with logs |
-| Polynomials | Remainder and factor theorems; factorising and solving cubic equations |
-| Differential Calculus | Limits; derivative from first principles; rules of differentiation; equations of tangents; cubic graphs (stationary points, concavity, point of inflection); optimisation and rates of change |
+| Topic | Lessons | CAPS content |
+|---|---|---|
+| Sequences & Series | Arithmetic sequences & series · Geometric sequences & series · Sigma notation & sum to infinity | Arithmetic and geometric sequences and series; sigma notation; Sₙ formulas; sum to infinity and convergence |
+| Functions & Inverses | Functions & their inverses · Exponential & log functions | Definition of a function; inverses of linear, quadratic (restricted domain) and exponential functions; logarithms and log laws |
+| Finance & Annuities | Future value annuities & sinking funds · Present value: loans & outstanding balances · How long? Finding n with logs | Future and present value annuities; loans and bond repayments; sinking funds; outstanding balance; finding n with logs |
+| Polynomials | Remainder & factor theorems · Factorising & solving cubics | Remainder and factor theorems; factorising and solving cubic equations |
+| Differential Calculus | Limits & first principles · Rules of differentiation & tangents · Cubic graphs · Optimisation · Rates of change | Limits; derivative from first principles; rules of differentiation; equations of tangents; cubic graphs (stationary points, concavity, point of inflection); optimisation and rates of change |
 
 ## Grade 12 – Geometry & Trigonometry (Phase 4)
 
