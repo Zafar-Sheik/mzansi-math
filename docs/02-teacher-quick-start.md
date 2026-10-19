@@ -12,6 +12,8 @@ Open **Toolkit**. Every interactive tool is there, ready for the projector:
 - **Quadratic lab** – show the formula, the discriminant and completing the square updating live as you change *a*, *b* and *c*.
 - **Inequality lab** – the clearest way we know to show why "< 0 means between the roots".
 - **Money lab** and **Investment timeline** – simple vs compound, depreciation, nominal vs effective, and multi-step timelines.
+- **Circle theorem explorer** – drag points round the circle while the class watches the angles stay in proportion. A great lead-in to the proofs.
+- **CAST explorer** and **Trig graph lab** – reduction formulae and the effects of a, k, p and q, live.
 
 ## 3. Set a lesson as homework
 

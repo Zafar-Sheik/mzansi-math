@@ -109,3 +109,13 @@ describe("problem generators", () => {
     });
   }
 });
+
+describe("trig input", () => {
+  it("reads degrees, θ and sin^2", () => {
+    expect(value("sin 30°")).toBeCloseTo(0.5);
+    expect(evaluate(parse("sin^2 x + cos^2 x", ["x"]), { x: 37 })).toBeCloseTo(1);
+    expect(evaluate(parse("tanθ", ["x"]), { x: 45 })).toBeCloseTo(1);
+    expect(checkAnswer("-sin θ", { answer: "-sin(x)", kind: "expr" }).ok).toBe(true);
+    expect(checkAnswer("cos x", { answer: "-sin(x)", kind: "expr" }).ok).toBe(false);
+  });
+});

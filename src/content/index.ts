@@ -3,6 +3,10 @@ import { EQUATIONS } from "./lessons/g11-equations";
 import { PATTERNS } from "./lessons/g11-patterns";
 import { FUNCTIONS } from "./lessons/g11-functions";
 import { FINANCE } from "./lessons/g11-finance";
+import { ANALYTICAL } from "./lessons/g11-analytical";
+import { EUCLIDEAN } from "./lessons/g11-euclidean";
+import { MEASUREMENT } from "./lessons/g11-measurement";
+import { TRIG } from "./lessons/g11-trig";
 import { EXAM_QUESTIONS } from "./exam";
 import type { Lesson, QuizQuestion, Term, Topic } from "./types";
 import { TOPICS } from "@/lib/topics";
@@ -10,7 +14,7 @@ import { TOPICS } from "@/lib/topics";
 const TOPIC_ORDER = TOPICS.map((t) => t.topic);
 
 /** Every lesson, in teaching order (CAPS topic order, Grade 11 then Grade 12). */
-export const LESSONS: Lesson[] = [...EXPONENTS, ...EQUATIONS, ...PATTERNS, ...FUNCTIONS, ...FINANCE].sort(
+export const LESSONS: Lesson[] = [...EXPONENTS, ...EQUATIONS, ...PATTERNS, ...FUNCTIONS, ...FINANCE, ...ANALYTICAL, ...EUCLIDEAN, ...MEASUREMENT, ...TRIG].sort(
   (a, b) => TOPIC_ORDER.indexOf(a.topic) - TOPIC_ORDER.indexOf(b.topic) || a.order - b.order,
 );
 

@@ -6,7 +6,7 @@ MathsMzansi covers the whole CAPS Grade 11 & 12 syllabus for **Algebra, Geometry
 
 **Platform:** lessons in steps, KaTeX maths everywhere, typed-answer checking (numbers, sets, points, expressions, surd forms), endless question generators, the SVG graph engine, flashcards with spaced repetition, Quiz Arena, Exam Room, games (Speed Solve, Graph Match, Formula Pairs, True/False Blitz, Odd One Out, Maths Hangman), XP/badges/streaks, accessibility preferences, teacher guide.
 
-**Content – Grade 11:**
+**Content – Grade 11 (16 lessons):**
 
 - Exponents & Surds (3 lessons)
 - Equations & Inequalities (4 lessons)
@@ -16,13 +16,20 @@ MathsMzansi covers the whole CAPS Grade 11 & 12 syllabus for **Algebra, Geometry
 
 **Tools:** function grapher + Graph Match, quadratic lab, inequality lab, line-meets-parabola lab, pattern machine, exponent-law tiles, surd simplifier, money lab, investment timeline, sketch figures, drills.
 
-## Phase 2 – Grade 11 Geometry & Trigonometry
+## Phase 2 – Grade 11 Geometry & Trigonometry ✅
 
-- **Analytical geometry:** inclination, parallel/perpendicular lines, equations of lines. *Tool: coordinate plane with draggable points.*
-- **Euclidean geometry:** all Grade 11 circle theorems with proofs and riders. *Tool: interactive circle-theorem explorer with draggable points that keeps angles live.*
-- **Measurement:** pyramids, cones, spheres, combined solids. *Tool: 3D solid viewer with scale factor slider.*
-- **Trigonometry:** identities, reduction formulae, general solutions, trig graphs, sine/cosine/area rules. *Tools: unit-circle & CAST explorer, trig graph lab (k, p, q), triangle solver.*
-- New generators for each skill, Grade 11 Paper 2 exam questions, more games (e.g. "CAST Quadrant Rush").
+**Content – Grade 11 (14 lessons):**
+
+- Analytical Geometry (3 lessons): distance, midpoint & gradient · equations of lines & inclination · parallel & perpendicular lines
+- Euclidean Geometry (3 lessons): chords & the angle at the centre · same segment & cyclic quadrilaterals · tangents & the tan-chord theorem – with the examinable proofs
+- Measurement (2 lessons): volume & surface area · combined solids & scaling
+- Trigonometry (6 lessons): ratios & CAST · reduction formulae · identities · equations & general solutions · graphs · sine, cosine & area rules
+
+**Tools:** coordinate lab (draggable points), circle-theorem explorer (six theorems, drag points round the circle), geometry figures for riders, solid viewer with the k²/k³ scale factor, CAST & trig-ratio explorer, trig graph lab, triangle solver.
+
+**Practice:** 13 new question generators (including circle-angle questions with generated diagrams), so the drills and Speed Solve now cover geometry and trig. 10 new Paper 2 exam questions, including riders and a theorem proof.
+
+**Engine:** the answer checker understands degrees (`°`), `θ` and `sin^2 x`, and checks trig expressions over a wide range of angles.
 
 ## Phase 3 – Grade 12 Algebra & Calculus
 

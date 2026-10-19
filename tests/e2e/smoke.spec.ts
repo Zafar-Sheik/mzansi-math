@@ -94,13 +94,44 @@ test.describe("MathsMzansi smoke tests", () => {
     await expect(page.getByText(/Phase 3/).first()).toBeVisible();
   });
 
+  test("phase 2: drag a point in the coordinate lab", async ({ page }) => {
+    await page.goto("/toolkit", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /^Coordinate lab/ }).click();
+    const svg = page.getByRole("img", { name: "Cartesian plane with points A, B and C" });
+    await expect(page.getByText(/A\(-3; -2\)/).first()).toBeVisible();
+    await svg.evaluate((el) => el.scrollIntoView({ block: "center", behavior: "instant" }));
+    await page.waitForTimeout(200);
+    const box = (await svg.boundingBox())!;
+    // A(-3; -2) in a view of x, y ∈ [-8.5; 8.5]
+    const px = (x: number) => box.x + ((x + 8.5) / 17) * box.width;
+    const py = (y: number) => box.y + ((8.5 - y) / 17) * box.height;
+    await page.mouse.move(px(-3), py(-2));
+    await page.mouse.down();
+    await page.mouse.move(px(-1), py(-2), { steps: 5 });
+    await page.mouse.move(px(-1), py(-4), { steps: 5 });
+    await page.mouse.up();
+    await expect(page.getByText(/A\(-1; -4\)/).first()).toBeVisible();
+  });
+
+  test("phase 2: circle theorems, CAST and circle-angle drill with a figure", async ({ page }) => {
+    await page.goto("/toolkit", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /^Circle theorem explorer/ }).click();
+    await page.getByRole("button", { name: "Cyclic quadrilateral" }).click();
+    await expect(page.getByText(/opp ∠s of cyclic quad/)).toBeVisible();
+    await page.getByRole("button", { name: /^CAST & trig ratios/ }).click();
+    await expect(page.getByText(/Reference angle/).first()).toBeVisible();
+    await page.goto("/learn/circle-centre", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /4\. Your turn/ }).first().click();
+    await expect(page.getByRole("img", { name: "Geometry figure" }).first()).toBeVisible();
+  });
+
   test("curriculum API returns JSON", async ({ request }) => {
     const body = await (await request.get("/api/curriculum")).json();
-    expect(body.lessons.length).toBeGreaterThanOrEqual(15);
+    expect(body.lessons.length).toBeGreaterThanOrEqual(30);
     expect(body.topics.length).toBe(17);
   });
 
-  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
+  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
     test(`no sideways scrolling on ${path}`, async ({ page }) => {
       await page.goto(path);
       await page.waitForLoadState("networkidle");

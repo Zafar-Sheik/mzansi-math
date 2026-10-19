@@ -23,7 +23,13 @@ export const WIDGET_CATALOGUE: { name: WidgetName; title: string; topic: Topic; 
   { name: "function-grapher", title: "Graph match challenge", topic: "g11-functions", description: "Hit the target graph by setting a, p and q. Addictive.", props: { challenge: true, title: "Graph match challenge" } },
   { name: "finance-lab", title: "Money lab", topic: "g11-finance", description: "Simple vs compound, depreciation, nominal vs effective rates." },
   { name: "timeline", title: "Investment timeline", topic: "g11-finance", description: "Deposits, withdrawals and changing rates – moved to the end of the timeline." },
-  { name: "drill", title: "Endless drill (everything)", topic: "g11-exponents", description: "Randomly generated questions from every Phase 1 skill, with working." },
+  { name: "coordinate-lab", title: "Coordinate lab", topic: "g11-analytical", description: "Drag points: distance, midpoint, gradient, inclination, parallel & perpendicular lines." },
+  { name: "circle-theorems", title: "Circle theorem explorer", topic: "g11-euclidean", description: "Drag points round the circle – every Grade 11 theorem, live." },
+  { name: "solid-viewer", title: "Solid viewer", topic: "g11-measurement", description: "Volume and surface area of prisms, cylinders, pyramids, cones and spheres – and the k² / k³ rule." },
+  { name: "unit-circle", title: "CAST & trig ratios", topic: "g11-trig", description: "Drag P round the circle: x, y, r, signs, reference angles and reduction formulae." },
+  { name: "trig-graph-lab", title: "Trig graph lab", topic: "g11-trig", description: "sin, cos and tan with amplitude, period and shifts." },
+  { name: "triangle-solver", title: "Triangle solver", topic: "g11-trig", description: "Sine, cosine and area rules with the working – drawn to scale." },
+  { name: "drill", title: "Endless drill (everything)", topic: "g11-exponents", description: "Randomly generated questions from every skill so far, with working." },
 ];
 
 export const WIDGET_COUNT = new Set(WIDGET_CATALOGUE.map((w) => w.title)).size;

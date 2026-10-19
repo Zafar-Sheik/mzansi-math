@@ -50,7 +50,7 @@ export function ExamRoom({ questions }: { questions: ExamQuestion[] }) {
           <p className="mt-1 text-sm text-muted">Do the working on paper (or in the box) <strong>before</strong> you open the memo – that is where the learning happens. One tick = one mark.</p>
         </header>
         {current.source && <div className="mt-5 rounded-2xl border-l-4 border-exam bg-exam/5 p-4"><Markdown md={current.source} /></div>}
-        {current.figure && <div className="mt-5"><div className="mb-1 text-xs font-bold text-muted uppercase">Figure (interactive)</div><Widget name={current.figure.widget} props={current.figure.props} /></div>}
+        {current.figure && <div className="mt-5"><div className="mb-1 text-xs font-bold text-muted uppercase">Figure</div><Widget name={current.figure.widget} props={current.figure.props} /></div>}
         <div className="mt-6 space-y-4">
           {current.parts.map((p, k) => <ExamPartCard key={k} part={p} id={`${current.id}-${k}`} number={`${qNum}.${k + 1}`} />)}
         </div>

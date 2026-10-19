@@ -31,6 +31,8 @@ export function normalise(src: string): string {
     .replace(/²/g, "^2")
     .replace(/³/g, "^3")
     .replace(/π/g, "pi")
+    .replace(/°/g, "")
+    .replace(/[θΘ]/g, "x")
     .replace(/√/g, "sqrt")
     .replace(/∛/g, "cbrt")
     .replace(/\*\*/g, "^")
@@ -135,11 +137,18 @@ export function parse(src: string, vars: string[] = []): Node {
     }
     if (t.t === "id") {
       if ((FNS as string[]).includes(t.v)) {
+        // sin^2 x, cos^2(x): a power written on the function name
+        let pow: Node | null = null;
+        if (peek()?.t === "op" && (peek() as { v: string }).v === "^") {
+          p++;
+          pow = unary();
+        }
         // sqrt(2), sqrt 2, sqrt x, sin30, sin(30)
         const nxt = peek();
         if (!nxt) throw new ParseError(`${t.v} needs something after it.`);
         const a = nxt.t === "(" ? primary() : nxt.t === "op" && nxt.v === "-" ? (p++, { k: "neg", a: primary() } as Node) : primary();
-        return { k: "fn", f: t.v as Fn, a };
+        const call: Node = { k: "fn", f: t.v as Fn, a };
+        return pow ? { k: "bin", op: "^", a: call, b: pow } : call;
       }
       if (t.v === "pi") return { k: "const", n: "pi" };
       if (t.v === "e" && !vars.includes("e")) return { k: "const", n: "e" };

@@ -72,6 +72,8 @@ export interface PracticeProblem {
   hint?: string;
   /** Full worked solution (markdown), shown after an attempt. */
   solution: string;
+  /** Optional diagram shown with the question (e.g. a circle-geometry figure). */
+  figure?: { widget: WidgetName; props?: Record<string, unknown> };
 }
 
 export interface WorkedStep {
@@ -113,7 +115,14 @@ export type WidgetName =
   | "intersection-lab"
   | "finance-lab"
   | "timeline"
-  | "sketch";
+  | "sketch"
+  | "figure"
+  | "coordinate-lab"
+  | "circle-theorems"
+  | "solid-viewer"
+  | "unit-circle"
+  | "trig-graph-lab"
+  | "triangle-solver";
 
 export interface Chunk {
   id: string;

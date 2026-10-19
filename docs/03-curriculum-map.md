@@ -33,14 +33,14 @@ Approximate marks per topic (±3) from the DBE examination guidelines – always
 
 > Grade 11 trigonometric graphs live in the Trigonometry topic (Phase 2), not in Functions & Graphs.
 
-## Grade 11 – Geometry & Trigonometry (Phase 2)
+## Grade 11 – Geometry & Trigonometry (Phase 2 ✅)
 
-| Topic | CAPS content |
-|---|---|
-| Analytical Geometry | Equation of a line through two points / given gradient and point; inclination θ (tan θ = m); parallel and perpendicular lines |
-| Euclidean Geometry | Circle theorems (centre ⟂ chord, angle at centre, angles in the same segment, cyclic quadrilaterals, tan–chord); proofs and riders |
-| Measurement | Surface area and volume of right prisms, cylinders, pyramids, cones, spheres and combinations; effect of multiplying dimensions by a factor k |
-| Trigonometry | Identities (tan θ = sin θ / cos θ, sin² θ + cos² θ = 1); reduction formulae and negative angles; general solutions; graphs y = k sin x, y = sin kx, y = sin(x + p) etc.; sine, cosine and area rules |
+| Topic | Lessons | CAPS content |
+|---|---|---|
+| Analytical Geometry | Distance, midpoint & gradient · Equations of lines & inclination · Parallel & perpendicular lines | Distance, midpoint and gradient; collinear points; equation of a line through two points / a point and a gradient; inclination θ (m = tan θ); parallel and perpendicular lines; perpendicular bisectors |
+| Euclidean Geometry | Chords, centres & the angle at the centre · Same segment & cyclic quadrilaterals · Tangents & the tan-chord theorem | Line from centre ⟂ chord; angle at centre = 2 × angle at circumference; angle in a semicircle; angles in the same segment; cyclic quadrilaterals (opposite and exterior angles, converses); tangents (tan ⊥ radius, tangents from a common point, tan-chord theorem); examinable proofs; riders |
+| Measurement | Volume & surface area of solids · Combined solids & scaling | Surface area and volume of right prisms, cylinders, pyramids, cones, spheres and combined objects; effect of multiplying dimensions by k |
+| Trigonometry | Ratios on the Cartesian plane · Reduction formulae · Identities · Equations & the general solution · Graphs · Sine, cosine & area rules | x, y, r definitions and CAST; special angles; reduction formulae (180° ± θ, 360° − θ, −θ, 90° ± θ); tan θ = sin θ / cos θ and sin²θ + cos²θ = 1; general solutions; effects of a, k, p, q on sin, cos, tan graphs; sine, cosine and area rules in 2D |
 
 ## Grade 12 – Algebra & Calculus (Phase 3)
 

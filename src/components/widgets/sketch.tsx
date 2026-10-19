@@ -12,12 +12,14 @@ export interface SketchProps {
   points?: { x: number; y: number; label?: string }[];
   guides?: { x?: number; y?: number; label?: string }[];
   caption?: string;
+  xStep?: number;
+  yStep?: number;
 }
 
 const COLOURS = ["var(--curve-1)", "var(--curve-2)", "var(--curve-3)"];
 
 /** A static, labelled sketch (exam figures and lesson diagrams) drawn from formulas. */
-export function Sketch({ title, view = { xMin: -6, xMax: 6, yMin: -6, yMax: 6 }, curves, points = [], guides = [], caption }: SketchProps) {
+export function Sketch({ title, view = { xMin: -6, xMax: 6, yMin: -6, yMax: 6 }, curves, points = [], guides = [], caption, xStep, yStep }: SketchProps) {
   const fns = useMemo(() => curves.map((c) => {
     const tree = parse(c.expr, ["x"]);
     return (x: number) => evaluate(tree, { x });
@@ -26,7 +28,7 @@ export function Sketch({ title, view = { xMin: -6, xMax: 6, yMin: -6, yMax: 6 },
     <figure className="rounded-2xl border border-line bg-surface p-3">
       {title && <figcaption className="mb-2 font-display font-bold">{title}</figcaption>}
       <div className="mx-auto max-w-xl">
-        <Plot view={view} label={title ?? "Sketch"} className="w-full">
+        <Plot view={view} label={title ?? "Sketch"} className="w-full" xStep={xStep} yStep={yStep}>
           {guides.map((g, i) => <Guide key={i} x={g.x} y={g.y} label={g.label} />)}
           {fns.map((f, i) => <Curve key={i} f={f} colour={curves[i].colour ?? COLOURS[i % 3]} from={curves[i].from} to={curves[i].to} dashed={curves[i].dashed} />)}
           {points.map((p, i) => <Dot key={i} x={p.x} y={p.y} label={p.label} colour="var(--text)" r={4} />)}

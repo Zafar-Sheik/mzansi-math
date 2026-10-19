@@ -6,6 +6,7 @@ import { checkAnswer, inferKind } from "@/lib/math/check";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/learn/markdown";
+import { Widget } from "@/components/widgets";
 import { MathInput } from "./math-input";
 
 const PRAISE = ["Sharp sharp! ✅", "Lekker! 🔥", "Spot on! 🎯", "Eish, you're good. 💯", "Yebo! That's it. ✨", "Too clean! 🧼"];
@@ -67,6 +68,7 @@ export function ProblemCard({ problem, onResult, footer, number }: {
         {number && <span className="rounded-lg bg-brand-soft px-2 py-0.5 font-mono text-sm font-bold text-brand">{number}</span>}
         <div className="min-w-0 flex-1"><Markdown md={problem.q} className="prose-learn font-semibold" /></div>
       </div>
+      {problem.figure && <div className="mt-3"><Widget name={problem.figure.widget} props={problem.figure.props} /></div>}
       <div className="mt-3">
         <MathInput value={value} onChange={(v) => { setValue(v); if (state === "bad") setState("idle"); }} onSubmit={check} kind={kind} vars={problem.vars} disabled={state === "ok"} status={state === "idle" ? null : state} />
       </div>

@@ -5,16 +5,19 @@ The sister app of *CodeMzansi* (IT) and *GeoMzansi* (Geography): same learning d
 
 Covers the **Algebra, Geometry and Trigonometry** strands, built in phases (see [`docs/12-roadmap.md`](docs/12-roadmap.md)).
 
-## Phase 1 (this release): platform + Grade 11 Algebra & Functions
+## Live now: all of Grade 11 (Phases 1 & 2)
 
-- 📚 **16 lessons** in short steps: Exponents & Surds, Equations & Inequalities, Number Patterns, Functions & Graphs, Finance, Growth & Decay
+- 📚 **30 lessons** in short steps
+  - *Algebra:* Exponents & Surds, Equations & Inequalities, Number Patterns, Functions & Graphs, Finance, Growth & Decay
+  - *Geometry:* Analytical Geometry, Euclidean (circle) Geometry with the examinable proofs, Measurement
+  - *Trigonometry:* ratios & CAST, reduction formulae, identities, equations & general solutions, graphs, sine/cosine/area rules
 - ✍️ **Typed answers that are actually checked** – `2√5`, `x = 2 or x = -3`, `-1 ± √3`, `(2; -3)`, `2n^2 + n - 1`, `R12 345,67` – with live preview, a symbol keypad, specific feedback, hints and full worked solutions
-- ♾️ **Endless practice**: 18 question generators, each with worked solutions and streaks
-- 📈 **Interactive tools**: function grapher (line, parabola, hyperbola, exponential) with a *Graph Match* challenge, quadratic lab, inequality lab, line-meets-parabola lab, pattern machine, exponent-law tiles, surd simplifier, money lab, investment timeline
+- ♾️ **Endless practice**: 31 question generators (circle-angle questions come with generated diagrams), each with worked solutions and streaks
+- 📈 **18 interactive tools**: function grapher with a *Graph Match* challenge, quadratic / inequality / intersection labs, pattern machine, exponent-law tiles, surd simplifier, money lab, investment timeline, coordinate lab (draggable points), circle-theorem explorer, solid viewer (k² / k³), CAST explorer, trig graph lab, triangle solver
 - 🪜 **Worked examples revealed one step at a time**, with a "Why?" for every step
 - 🃏 **Flashcards** with spaced repetition for every term and formula, plus a glossary
 - ⚔️ **Quiz Arena** – mixed-topic rounds, relaxed or timed
-- 📝 **Exam Room** – NSC-style questions with marking memos (method marks included)
+- 📝 **Exam Room** – 20 NSC-style questions (80 parts) with marking memos, including geometry riders and a theorem proof
 - 🎮 **Games**: Speed Solve, Graph Match, Formula Pairs, True/False Blitz, Odd One Out, Maths Hangman
 - 🧠 **ADHD & accessibility**: step mode, focus mode, focus sprints, calm mode, reading ruler, dyslexia-friendly fonts, read-aloud that reads maths, high contrast
 - 🔒 **No accounts, no tracking**: everything is stored on the learner's device

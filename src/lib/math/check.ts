@@ -136,9 +136,11 @@ export function checkAnswer(input: string, spec: Spec): CheckResult {
     const extra = variablesIn(u).filter((v) => !vars.includes(v));
     if (extra.length) return { ok: false, message: `Use only ${vars.join(", ")} in your answer.` };
     const rnd = seededRandom(spec.answer);
+    // Trig works in degrees: sample a wide range, or sin x and tan x look equal near 0°.
+    const wide = /sin|cos|tan/.test(spec.answer);
     let tested = 0;
     for (let k = 0; k < 40 && tested < 8; k++) {
-      const scope = Object.fromEntries(vars.map((v) => [v, Math.round((rnd() * 8 - 3.7) * 1000) / 1000 || 0.37]));
+      const scope = Object.fromEntries(vars.map((v) => [v, Math.round((wide ? rnd() * 340 - 170 : rnd() * 8 - 3.7) * 1000) / 1000 || 0.37]));
       const av = evaluate(a, scope);
       if (!Number.isFinite(av)) continue;
       const uv = evaluate(u, scope);

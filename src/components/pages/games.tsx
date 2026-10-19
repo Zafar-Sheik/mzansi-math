@@ -12,6 +12,7 @@ import { Chip } from "@/components/ui/chip";
 import { InlineMd, Markdown } from "@/components/learn/markdown";
 import { MathInput } from "@/components/math/math-input";
 import { FunctionGrapher } from "@/components/widgets/function-grapher";
+import { Widget } from "@/components/widgets";
 
 export interface GameTerm { term: string; def: string; topic: Topic }
 type Game = "speed" | "graph" | "pairs" | "blitz" | "odd" | "hangman";
@@ -90,7 +91,7 @@ function SpeedSolve() {
   if (!running && left === SPEED_SECONDS) {
     return (
       <div className="text-center">
-        <p className="text-muted">Quick-fire questions: exponents, surds, factorising, the discriminant, turning points, asymptotes and average gradients. Type the answer and press Enter. No calculator needed!</p>
+        <p className="text-muted">Quick-fire questions: exponents, surds, factorising, turning points, asymptotes, distances, circle angles, special angles and trig graphs. Type the answer and press Enter. No calculator needed!</p>
         <p className="mt-2 text-sm">Your best: <strong>{best}</strong></p>
         <Button size="lg" className="mt-4" onClick={start}><Play className="h-4 w-4" /> Start</Button>
       </div>
@@ -112,6 +113,7 @@ function SpeedSolve() {
       <div className="mt-1 h-1 overflow-hidden rounded bg-surface-2"><div className="h-full bg-brand transition-[width] duration-1000 ease-linear" style={{ width: `${(left / SPEED_SECONDS) * 100}%` }} /></div>
       <div className={cn("mt-3 rounded-3xl border-2 p-5 transition", flash === "ok" ? "border-success bg-success/10" : flash === "bad" ? "border-danger bg-danger/10" : "border-line bg-surface")}>
         <Markdown md={problem.q} className="prose-learn text-lg font-semibold" />
+        {problem.figure && <div className="mt-3"><Widget key={n} name={problem.figure.widget} props={problem.figure.props} /></div>}
         <div className="mt-3"><MathInput key={n} value={value} onChange={setValue} onSubmit={submit} kind={problem.kind ?? inferKind(problem.answer)} vars={problem.vars} /></div>
         <div className="mt-2 flex gap-2"><Button onClick={submit} disabled={!value.trim()}><Check className="h-4 w-4" /> Enter</Button><Button variant="ghost" onClick={skip}><SkipForward className="h-4 w-4" /> Skip</Button></div>
       </div>

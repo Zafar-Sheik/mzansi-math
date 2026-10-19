@@ -3,31 +3,17 @@
  * Every generator is deterministic for a given seed, so tests can check that
  * each generated memo answer passes its own checker.
  */
-import type { PracticeProblem, Topic } from "@/content/types";
 import { seededRandom } from "@/lib/utils";
 import { compoundGrowth, effectiveRate, reducingBalance, simpleGrowth, straightLine } from "./finance";
 import { fmt, fracAns, fracTex, gcd, lead, quadTex, round, shift, signed, surdAns, surdTex } from "./numbers";
 import { quadraticFromTerms, termOf } from "./patterns";
+import { type Generator, int, nonZero, pick, type Rng } from "./gen-kit";
+import { GEO_TRIG_GENERATORS } from "./generators-geo-trig";
 
-type Rng = () => number;
-const int = (r: Rng, lo: number, hi: number) => lo + Math.floor(r() * (hi - lo + 1));
-const pick = <T,>(r: Rng, arr: readonly T[]): T => arr[Math.floor(r() * arr.length)];
-const nonZero = (r: Rng, lo: number, hi: number) => {
-  let v = 0;
-  while (v === 0) v = int(r, lo, hi);
-  return v;
-};
+export type { Generator } from "./gen-kit";
+
 const pw = (b: number, e: number) => (e >= 0 ? fracTex(b ** e, 1) : fracTex(1, b ** -e));
 const pwAns = (b: number, e: number) => (e >= 0 ? String(b ** e) : fracAns(1, b ** -e));
-
-export interface Generator {
-  id: string;
-  title: string;
-  topic: Topic;
-  /** Quick enough for the Speed Solve game. */
-  speed?: boolean;
-  make: (seed: number | string) => PracticeProblem;
-}
 
 // ------------------------------------------------------------ Exponents & surds
 const expEval: Generator = {
@@ -594,6 +580,7 @@ export const GENERATORS: Generator[] = [
   patternGeneral, patternTerm,
   parabolaTp, hyperbolaAsym, expGraph, avgGradient,
   growth, depreciation, effective,
+  ...GEO_TRIG_GENERATORS,
 ];
 
 export function getGenerator(id: string): Generator | undefined {

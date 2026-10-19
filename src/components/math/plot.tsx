@@ -37,16 +37,24 @@ const fmtTick = (v: number) => String(Math.round(v * 1000) / 1000).replace("-", 
  * Cartesian plane in SVG. Children (Curve, Dot, Asymptote…) use the plane's
  * scale through context. `onPoint` reports the pointer position in graph units.
  */
-export function Plot({ view, width = 480, height = 360, label, children, onPoint, className, ticks = true }: {
+export function Plot({ view, width = 480, height = 360, label, children, onPoint, onDrag, className, ticks = true, xStep, yStep, xLabel = "x", yLabel = "y" }: {
   view: View;
   width?: number;
   height?: number;
   label: string;
   children?: React.ReactNode;
   onPoint?: (p: { x: number; y: number } | null) => void;
+  /** Pointer down / move (while pressed) / up, in graph units – for draggable points. */
+  onDrag?: (p: { x: number; y: number }, phase: "down" | "move" | "up") => void;
   className?: string;
   ticks?: boolean;
+  /** Override the automatic tick spacing (e.g. 90 for trig graphs in degrees). */
+  xStep?: number;
+  yStep?: number;
+  xLabel?: string;
+  yLabel?: string;
 }) {
+  const pressed = useRef(false);
   const clip = useId().replace(/:/g, "");
   const svg = useRef<SVGSVGElement>(null);
   const scale = useMemo<Scale>(() => {
@@ -55,8 +63,8 @@ export function Plot({ view, width = 480, height = 360, label, children, onPoint
     return { view, W: width, H: height, sx, sy };
   }, [view, width, height]);
   const { sx, sy } = scale;
-  const xs = niceStep(view.xMax - view.xMin, width / 55);
-  const ys = niceStep(view.yMax - view.yMin, height / 45);
+  const xs = xStep ?? niceStep(view.xMax - view.xMin, width / 55);
+  const ys = yStep ?? niceStep(view.yMax - view.yMin, height / 45);
   const gx: number[] = [];
   for (let v = Math.ceil(view.xMin / xs) * xs; v <= view.xMax + 1e-9; v += xs) gx.push(Math.round(v / xs) * xs);
   const gy: number[] = [];
@@ -64,17 +72,32 @@ export function Plot({ view, width = 480, height = 360, label, children, onPoint
   const ox = Math.min(Math.max(sx(0), 0), width);
   const oy = Math.min(Math.max(sy(0), 0), height);
 
-  const move = (e: React.PointerEvent<SVGSVGElement>) => {
-    if (!onPoint || !svg.current) return;
-    const r = svg.current.getBoundingClientRect();
+  const toGraph = (e: React.PointerEvent<SVGSVGElement>) => {
+    const r = svg.current!.getBoundingClientRect();
     const px = ((e.clientX - r.left) / r.width) * width;
     const py = ((e.clientY - r.top) / r.height) * height;
-    onPoint({ x: view.xMin + (px / width) * (view.xMax - view.xMin), y: view.yMin + ((height - py) / height) * (view.yMax - view.yMin) });
+    return { x: view.xMin + (px / width) * (view.xMax - view.xMin), y: view.yMin + ((height - py) / height) * (view.yMax - view.yMin) };
   };
+  const move = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (!svg.current) return;
+    const g = toGraph(e);
+    onPoint?.(g);
+    if (onDrag && e.type === "pointerdown") {
+      pressed.current = true;
+      svg.current.setPointerCapture?.(e.pointerId);
+      onDrag(g, "down");
+    } else if (onDrag && pressed.current) onDrag(g, "move");
+  };
+  const up = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (onDrag && pressed.current && svg.current) onDrag(toGraph(e), "up");
+    pressed.current = false;
+  };
+  const interactive = Boolean(onPoint || onDrag);
 
   return (
     <svg ref={svg} viewBox={`0 0 ${width} ${height}`} className={`diagram touch-none select-none rounded-xl border border-line bg-surface ${className ?? ""}`} role="img" aria-label={label}
-      onPointerMove={onPoint ? move : undefined} onPointerDown={onPoint ? move : undefined} onPointerLeave={onPoint ? () => onPoint(null) : undefined}>
+      onPointerMove={interactive ? move : undefined} onPointerDown={interactive ? move : undefined} onPointerUp={interactive ? up : undefined} onPointerCancel={interactive ? up : undefined}
+      onPointerLeave={onPoint ? () => onPoint(null) : undefined}>
       <defs>
         <clipPath id={clip}><rect x="0" y="0" width={width} height={height} /></clipPath>
         <marker id={`${clip}-arrow`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--graph-axis)" /></marker>
@@ -85,8 +108,8 @@ export function Plot({ view, width = 480, height = 360, label, children, onPoint
       </g>
       <line className="axis" x1={0} x2={width} y1={oy} y2={oy} markerEnd={`url(#${clip}-arrow)`} />
       <line className="axis" x1={ox} x2={ox} y1={height} y2={0} markerEnd={`url(#${clip}-arrow)`} />
-      <text x={width - 10} y={oy - 6} className="tick" fontStyle="italic" fontSize="12">x</text>
-      <text x={ox + 6} y={12} className="tick" fontStyle="italic" fontSize="12">y</text>
+      <text x={width - 10} y={oy - 6} textAnchor="end" className="tick" fontStyle="italic" fontSize="12">{xLabel}</text>
+      <text x={ox + 6} y={12} className="tick" fontStyle="italic" fontSize="12">{yLabel}</text>
       {ticks && (
         <g>
           {gx.filter((v) => Math.abs(v) > 1e-9).map((v) => <text key={`tx${v}`} x={sx(v)} y={Math.min(oy + 13, height - 3)} textAnchor="middle" className="tick">{fmtTick(v)}</text>)}
