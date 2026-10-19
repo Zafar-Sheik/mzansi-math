@@ -1,0 +1,27 @@
+"use client";
+import dynamic from "next/dynamic";
+import type { WidgetName } from "@/content/types";
+
+const loading = () => <div className="h-64 animate-pulse rounded-2xl border border-line bg-surface-2" />;
+
+/** Widgets are code-split so each lesson only downloads what it uses. */
+const REGISTRY: Record<WidgetName, React.ComponentType<Record<string, unknown>>> = {
+  sorter: dynamic(() => import("./sorter").then((m) => m.Sorter as never), { loading }),
+  drill: dynamic(() => import("./drill").then((m) => m.Drill as never), { loading }),
+  "function-grapher": dynamic(() => import("./function-grapher").then((m) => m.FunctionGrapher as never), { loading }),
+  "quadratic-lab": dynamic(() => import("./quadratic-lab").then((m) => m.QuadraticLab as never), { loading }),
+  "exponent-laws": dynamic(() => import("./exponent-laws").then((m) => m.ExponentLaws as never), { loading }),
+  "surd-simplifier": dynamic(() => import("./surd-simplifier").then((m) => m.SurdSimplifier as never), { loading }),
+  "pattern-machine": dynamic(() => import("./pattern-machine").then((m) => m.PatternMachine as never), { loading }),
+  "inequality-lab": dynamic(() => import("./inequality-lab").then((m) => m.InequalityLab as never), { loading }),
+  "intersection-lab": dynamic(() => import("./intersection-lab").then((m) => m.IntersectionLab as never), { loading }),
+  "finance-lab": dynamic(() => import("./finance-lab").then((m) => m.FinanceLab as never), { loading }),
+  timeline: dynamic(() => import("./timeline").then((m) => m.Timeline as never), { loading }),
+  sketch: dynamic(() => import("./sketch").then((m) => m.Sketch as never), { loading }),
+};
+
+export function Widget({ name, props }: { name: WidgetName; props?: Record<string, unknown> }) {
+  const C = REGISTRY[name];
+  if (!C) return <p className="text-danger">Unknown widget: {name}</p>;
+  return <C {...(props ?? {})} />;
+}
