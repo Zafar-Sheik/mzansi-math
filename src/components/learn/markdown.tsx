@@ -23,6 +23,13 @@ function anchor(node: ReactNode): ReactNode {
 }
 
 /** Markdown with GitHub tables and LaTeX maths: `$x^2$` inline, `$$…$$` on its own line. */
+/**
+ * remark-math only treats $$…$$ as display maths when it sits on its own
+ * lines. Generated solutions chain several on one line, so give each its own block.
+ */
+export const blockMath = (md: string) =>
+  md.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex: string) => `\n\n$$\n${tex.trim()}\n$$\n\n`).replace(/\n{3,}/g, "\n\n").trim();
+
 export function Markdown({ md, className = "prose-learn" }: { md: string; className?: string }) {
   const { wordAnchors } = usePrefs();
   const wrap = (Tag: "p" | "li") =>

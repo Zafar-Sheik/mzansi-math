@@ -151,13 +151,42 @@ test.describe("MathsMzansi smoke tests", () => {
     await expect(page.getByRole("heading", { name: /2D & 3D problems/ }).first()).toBeVisible();
   });
 
+  test("phase 5: write, hand in and self-mark a quick mock", async ({ page }) => {
+    page.on("dialog", (d) => d.accept());
+    await page.goto("/exam/mock/g12-p2?quick=1&seed=5", { waitUntil: "networkidle" });
+    await page.getByLabel(/Untimed practice/).check();
+    await page.getByRole("button", { name: /Start writing/ }).click();
+    await page.getByRole("textbox").first().fill("m = 4/3 so the tangent has m = -3/4");
+    await expect(page.getByText(/1\/\d+ parts answered/)).toBeVisible();
+    await page.getByRole("button", { name: /^Hand in$/ }).click();
+    await expect(page.getByText("Your script and the memo")).toBeVisible();
+    await page.locator("section li button").first().click();
+    await page.getByRole("button", { name: /Finish marking – show my results/ }).click();
+    await expect(page.getByText("NSC level")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "By topic" })).toBeVisible();
+    await page.goto("/progress", { waitUntil: "networkidle" });
+    await expect(page.getByRole("heading", { name: /Weak-spot coach/ })).toBeVisible();
+    await expect(page.getByText("Dress Rehearsal")).toBeVisible();
+  });
+
+  test("phase 5: mock lobby and worksheet generator", async ({ page }) => {
+    await page.goto("/exam/mock");
+    await expect(page.getByRole("link", { name: /Full mock/ })).toHaveCount(4);
+    await page.goto("/teachers/worksheets?t=g11-equations&n=6&w=3", { waitUntil: "networkidle" });
+    const sheet = page.getByRole("article", { name: "Worksheet" });
+    await expect(sheet.locator("ol").first().locator(":scope > li")).toHaveCount(6);
+    await expect(page.getByRole("heading", { name: "Memo – worksheet #3" })).toBeVisible();
+    await page.getByRole("button", { name: /Gr|Number Patterns/ }).filter({ hasText: "Number Patterns" }).click();
+    await expect(page).toHaveURL(/t=g11-equations%2Cg11-patterns|t=g11-equations,g11-patterns/);
+  });
+
   test("curriculum API returns JSON", async ({ request }) => {
     const body = await (await request.get("/api/curriculum")).json();
     expect(body.lessons.length).toBeGreaterThanOrEqual(55);
     expect(body.topics.length).toBe(17);
   });
 
-  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/learn/circle-equation", "/learn/similar-triangles", "/learn/compound-angles", "/learn/heights-distances-3d", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
+  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/learn/circle-equation", "/learn/similar-triangles", "/learn/compound-angles", "/learn/heights-distances-3d", "/exam/mock", "/exam/mock/g11-p1", "/teachers/worksheets", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
     test(`no sideways scrolling on ${path}`, async ({ page }) => {
       await page.goto(path);
       await page.waitForLoadState("networkidle");

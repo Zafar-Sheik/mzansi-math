@@ -1,7 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { ArrowLeft, BookOpenCheck, CheckCircle2, Clock, NotebookPen } from "lucide-react";
+import { ArrowLeft, BookOpenCheck, CheckCircle2, Clock, NotebookPen, Timer } from "lucide-react";
 import type { ExamQuestion, Grade, Topic } from "@/content/types";
 import { useProgress } from "@/lib/progress";
 import { PAPER_INFO, TOPICS, topicMeta } from "@/lib/topics";
@@ -66,6 +67,14 @@ export function ExamRoom({ questions }: { questions: ExamQuestion[] }) {
     <div className="mx-auto max-w-7xl px-4 py-10">
       <h1 className="font-display text-4xl font-bold tracking-tight">Exam Room</h1>
       <p className="mt-2 max-w-2xl text-lg text-muted">NSC-style questions with marking memos. Work it out first, then tick each memo mark you earned – method marks included.</p>
+      <div className="mt-5 flex flex-col gap-3 rounded-2xl border-2 border-exam/40 bg-exam/5 p-4 sm:flex-row sm:items-center">
+        <Timer className="h-8 w-8 shrink-0 text-exam" />
+        <div className="flex-1"><div className="font-display font-bold">Ready for the real thing? Write a timed mock paper.</div><div className="text-sm text-muted">Full or quick mocks for Grade 11 and 12, Paper 1 and 2 – marked by you, with an NSC level and a breakdown by topic.</div></div>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/exam/mock" className="rounded-xl bg-exam px-4 py-2 text-sm font-semibold text-white">Mock papers</Link>
+          <Link href="/progress#coach" className="rounded-xl border border-line bg-surface px-4 py-2 text-sm font-semibold">Weak-spot coach</Link>
+        </div>
+      </div>
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
         {([11, 12] as const).map((g) => <button key={g} onClick={() => setGrade(g)} aria-pressed={grade === g} className={cn("rounded-xl px-4 py-2 text-sm font-bold", grade === g ? "bg-brand text-white" : "bg-surface-2 text-muted")}>Grade {g} papers</button>)}

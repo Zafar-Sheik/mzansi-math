@@ -289,3 +289,30 @@ main { overflow-x: clip; }
 .diagram .grid line { stroke: var(--graph-grid); stroke-width: 1; }
 .diagram .axis { stroke: var(--graph-axis); stroke-width: 1.4; }
 .diagram .tick { fill: var(--text-muted); font-size: 10px; }
+
+/* ==========================================================================
+   Print: mock papers, memos and worksheets print on white paper without the
+   site chrome, whatever theme the screen uses.
+   ========================================================================== */
+@media print {
+  html, html.dark, html.contrast {
+    --bg: #ffffff;
+    --bg-elevated: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f2f2f5;
+    --border: #c9cbd6;
+    --text: #000000;
+    --text-muted: #444444;
+    --brand: #3b0f8c;
+    --graph-grid: #e2e2ea;
+    --graph-axis: #333333;
+    --curve-1: #3b0f8c;
+    --curve-2: #0e5a70;
+    --curve-3: #9a3412;
+  }
+  body { background: #fff !important; color: #000; }
+  .hide-in-focus, .no-print { display: none !important; }
+  .print-break { break-before: page; }
+  .avoid-break { break-inside: avoid; }
+  @page { margin: 15mm; }
+}

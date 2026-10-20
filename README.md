@@ -5,7 +5,7 @@ The sister app of *CodeMzansi* (IT) and *GeoMzansi* (Geography): same learning d
 
 Covers the **Algebra, Geometry and Trigonometry** strands, built in phases (see [`docs/12-roadmap.md`](docs/12-roadmap.md)).
 
-## Live now: the whole Grade 11 & 12 syllabus (Phases 1–4)
+## Live now: the whole Grade 11 & 12 syllabus + exam season (Phases 1–5)
 
 - 📚 **55 lessons** in short steps
   - *Grade 11 Algebra:* Exponents & Surds, Equations & Inequalities, Number Patterns, Functions & Graphs, Finance, Growth & Decay
@@ -20,6 +20,9 @@ Covers the **Algebra, Geometry and Trigonometry** strands, built in phases (see 
 - 🃏 **Flashcards** with spaced repetition for every term and formula, plus a glossary
 - ⚔️ **Quiz Arena** – mixed-topic rounds, relaxed or timed
 - 📝 **Exam Room** – 37 NSC-style questions (142 parts) with marking memos, including geometry riders, theorem proofs, annuities, calculus and 3D trig
+- ⏱️ **Mock papers** – timed Paper 1 & Paper 2 mocks for both grades (full or quick), extra-time and untimed options, self-marking, NSC achievement level and a per-topic breakdown; papers and memos print
+- 🎯 **Weak-spot coach** – mastery per topic from quizzes, exams, mocks and drills, with the next lesson and a targeted drill
+- 🖨️ **Worksheet generator** for teachers – printable worksheets with memos, reproducible from a link
 - 🎮 **Games**: Speed Solve, Graph Match, Formula Pairs, True/False Blitz, Odd One Out, Maths Hangman
 - 🧠 **ADHD & accessibility**: step mode, focus mode, focus sprints, calm mode, reading ruler, dyslexia-friendly fonts, read-aloud that reads maths, high contrast
 - 🔒 **No accounts, no tracking**: everything is stored on the learner's device
@@ -42,6 +45,18 @@ npm run dev        # http://localhost:3000
 | `npm test` | Maths-engine and content-integrity tests (Vitest) |
 | `npm run test:e2e` | Browser tests on desktop + mobile (Playwright; needs a production build) |
 | `npm run check` | typecheck + lint + test + build |
+
+## Deploying
+
+Every page is statically generated; there is no backend and there are no environment variables.
+
+```bash
+npm ci
+npm run check      # typecheck + lint + unit tests + production build
+npm start          # serve the build on http://localhost:3000 (PORT to change)
+```
+
+On Vercel, import the repository and keep the defaults (Next.js, `npm run build`). Node 18.18+ is required.
 
 ## Documentation
 

@@ -17,6 +17,8 @@ import { G12_TRIG } from "./lessons/g12-trig";
 import { EXAM_QUESTIONS } from "./exam";
 import type { Lesson, QuizQuestion, Term, Topic } from "./types";
 import { TOPICS } from "@/lib/topics";
+import { GENERATORS } from "@/lib/math/generators";
+import type { MasteryIndex } from "@/lib/mastery";
 
 const TOPIC_ORDER = TOPICS.map((t) => t.topic);
 
@@ -79,3 +81,22 @@ export const QUESTION_BANK: BankQuestion[] = LESSONS.flatMap((l) =>
 
 export { EXAM_QUESTIONS };
 export type { Lesson, Topic } from "./types";
+
+/** Everything the weak-spot coach needs to turn progress into per-topic mastery. */
+export function masteryIndex(): MasteryIndex {
+  const quizTopic: Record<string, Topic> = {};
+  const examTopic: Record<string, Topic> = {};
+  for (const l of LESSONS) for (const c of l.chunks) for (const b of c.blocks) {
+    if (b.type === "quiz") quizTopic[b.id] = l.topic;
+    if (b.type === "practice") quizTopic[`practice:${b.id}`] = l.topic;
+    if (b.type === "exam") examTopic[b.question.id] = l.topic;
+  }
+  for (const q of EXAM_QUESTIONS) examTopic[q.id] = q.topic;
+  const topics = TOPICS.filter((t) => LIVE_TOPICS.includes(t.topic)).map((t) => ({
+    topic: t.topic, grade: t.grade, title: t.title, emoji: t.emoji, colour: t.colour, slug: t.slug,
+    lessons: lessonsForTopic(t.topic).map((l) => ({ slug: l.slug, title: l.title })),
+    generators: GENERATORS.filter((g) => g.topic === t.topic).map((g) => g.id),
+    examQuestions: EXAM_QUESTIONS.filter((q) => q.topic === t.topic).length,
+  }));
+  return { topics, quizTopic, examTopic };
+}

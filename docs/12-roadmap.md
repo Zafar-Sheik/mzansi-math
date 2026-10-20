@@ -61,9 +61,16 @@ MathsMzansi covers the whole CAPS Grade 11 & 12 syllabus for **Algebra, Geometry
 
 With Phase 4, the whole CAPS Grade 11 & 12 syllabus for Algebra, Geometry and Trigonometry is live.
 
-## Phase 5 – Exam season
+## Phase 5 – Exam season ✅
 
-- Full mock papers (P1 and P2, both grades) with a timed exam mode and a marks summary.
-- Weak-spot targeting: suggest drills from quiz and exam results.
-- Teacher extras: printable worksheets generated from the question generators.
-- Optional: statistics and probability.
+- **Mock papers** (`/exam/mock`): a full mock for Grade 11 and Grade 12, Paper 1 and Paper 2, built from the Exam Room questions, plus seeded **quick mocks** of about 50 marks. Timed exam mode (exam time at 1,2 min per mark, +25% extra time, or untimed), an optional hidden clock, a "pens down" alert, and the script saved as you write. After handing in, learners mark their own script against the memo and get their mark, percentage, **NSC achievement level (1–7)**, time used and a **breakdown by topic** with links to the right lessons. Papers and memos print cleanly.
+- **Weak-spot coach** (on the Progress page): a mastery score for every topic from lesson quizzes, practice sets, self-marked exam questions, the latest mock of each paper and drill answers. It picks the three topics to work on next (weakest first) with the next lesson, the topic's exam questions and a **targeted drill** – or a mixed drill on all three.
+- **Worksheet generator** (`/teachers/worksheets`): choose topics and 4–30 questions, print or save as PDF with answer space and a separate memo page with full working. The link reproduces the exact worksheet, so a class set and its memo always match.
+- New badges: *Dress Rehearsal* (first mock) and *Distinction* (80%+ on a mock).
+- Generated solutions now show each line of working as display maths.
+
+## Possible next steps
+
+- Statistics and probability (examined in the NSC papers, outside this app's three strands).
+- More exam questions per topic, so full mocks get closer to 150 marks.
+- Afrikaans translation.

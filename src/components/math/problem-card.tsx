@@ -5,7 +5,7 @@ import type { PracticeProblem } from "@/content/types";
 import { checkAnswer, inferKind } from "@/lib/math/check";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Markdown } from "@/components/learn/markdown";
+import { blockMath, Markdown } from "@/components/learn/markdown";
 import { Widget } from "@/components/widgets";
 import { MathInput } from "./math-input";
 
@@ -91,7 +91,7 @@ export function ProblemCard({ problem, onResult, footer, number }: {
       {solution && (
         <div className="mt-3 rounded-xl border border-brand/30 bg-brand-soft/40 p-3">
           <div className="mb-1 text-xs font-bold tracking-wider text-brand uppercase">Worked solution</div>
-          <Markdown md={problem.solution} />
+          <Markdown md={blockMath(problem.solution)} />
         </div>
       )}
     </div>

@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Flame, SkipForward, Zap } from "lucide-react";
 import { getGenerator, GENERATORS } from "@/lib/math/generators";
-import { addXp, bumpStat } from "@/lib/progress";
+import { addXp, bumpStat, recordDrill } from "@/lib/progress";
 import { Button } from "@/components/ui/button";
 import { ProblemCard } from "@/components/math/problem-card";
 import { Segmented, WidgetFrame } from "./widget-frame";
@@ -30,6 +30,7 @@ export function Drill({ generators = GENERATORS.map((g) => g.id), title = "Endle
 
   const onResult = ({ correct, firstTry }: { correct: boolean; firstTry: boolean }) => {
     setAnswered(true);
+    recordDrill(g.topic, correct && firstTry);
     if (correct) bumpStat("calculations");
     setStats((s) => {
       const streak = correct && firstTry ? s.streak + 1 : 0;

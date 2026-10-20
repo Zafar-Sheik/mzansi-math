@@ -28,9 +28,17 @@ Every lesson has a link like `/learn/quadratic-equations`. Learners see their pr
 
 Learners do the working first, then open the memo and tick each mark they earned – exactly how NSC markers work, including follow-on (CA) marks. Use it as self-marked homework or as a revision station.
 
+## 4b. Write a mock paper
+
+**Exam Room → Mock papers** has a full Paper 1 and Paper 2 mock for each grade, and quick mocks of about 50 marks (a new mix every time). Run one in class with the timer, or print the paper and the memo from the start screen. Learners who write online mark their own scripts and get an NSC level and a breakdown by topic – a quick way to see where the class is weak.
+
+## 4c. Print a worksheet
+
+**Teachers → Worksheet generator** makes a printable worksheet from any mix of topics, with answer space and a full memo on a separate page. Copy the link to share it: the same link always gives the same questions. Change the worksheet number for a fresh set (e.g. one per row in a test).
+
 ## 5. Use the drills for differentiation
 
-The **Endless drill** in each lesson (and in the Toolkit) generates new questions forever – the strongest learners can chase streaks while you work with a small group.
+The **Endless drill** in each lesson (and in the Toolkit) generates new questions forever – the strongest learners can chase streaks while you work with a small group. The **Weak-spot coach** on each learner's Progress page tells them which three topics to work on next and gives them a drill aimed at exactly those topics.
 
 ## 6. Accessibility in one click
 

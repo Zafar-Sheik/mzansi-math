@@ -13,12 +13,15 @@ It is the sister app of **CodeMzansi** (IT) and **GeoMzansi** (Geography): same 
 - **Flashcards** with spaced repetition (Leitner boxes) for every key term and formula, plus a searchable glossary.
 - **Quiz Arena** – mixed-topic rounds, relaxed or timed.
 - **Exam Room** – NSC-style questions with marking memos (one tick per mark, method marks included) and exam technique.
+- **Mock papers** – timed Paper 1 and Paper 2 mocks for both grades, self-marked, with an NSC achievement level and a breakdown by topic.
+- **Weak-spot coach** – per-topic mastery from everything a learner does, with the next lesson and a targeted drill for the weakest topics.
+- **Worksheet generator** (teachers) – printable worksheets and memos from the question generators.
 - **Games** – Speed Solve, Graph Match, Formula Pairs, True/False Blitz, Odd One Out and Maths Hangman.
 - **Progress** – XP, levels, streaks, badges, a 12-week activity map, and export/import.
 
 ## How it's being built
 
-The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 added **Grade 11 Geometry & Trigonometry**, so all of Grade 11 is live; Phase 3 added **Grade 12 Algebra & Calculus** (sequences & series, inverses & logs, annuities, polynomials and differential calculus); Phase 4 adds **Grade 12 Geometry & Trigonometry** (circles and tangents, proportionality and similarity, compound and double angles, 2D and 3D problems) – so the whole Grade 11 & 12 syllabus for the three strands is now live. Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
+The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 added **Grade 11 Geometry & Trigonometry**, so all of Grade 11 is live; Phase 3 added **Grade 12 Algebra & Calculus** (sequences & series, inverses & logs, annuities, polynomials and differential calculus); Phase 4 added **Grade 12 Geometry & Trigonometry** (circles and tangents, proportionality and similarity, compound and double angles, 2D and 3D problems) – so the whole Grade 11 & 12 syllabus for the three strands is live; Phase 5 adds the exam-season tools: mock papers, the weak-spot coach and printable worksheets. Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
 
 ## Who it's for
 

@@ -7,11 +7,13 @@ import { gsap, motionAllowed, useGSAP } from "@/lib/gsap";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { todayKey, cn } from "@/lib/utils";
 import { useCards } from "@/lib/cards";
+import type { MasteryIndex } from "@/lib/mastery";
+import { WeakSpotCoach } from "./weak-spot-coach";
 
 export interface TopicLessons { topic: string; colour: string; emoji: string; lessons: { slug: string; title: string; emoji: string }[] }
 
 /** XP, level, streak calendar, badges and per-topic progress. Data never leaves the device. */
-export function ProgressDashboard({ topics, cardTotal }: { topics: TopicLessons[]; cardTotal: number }) {
+export function ProgressDashboard({ topics, cardTotal, mastery }: { topics: TopicLessons[]; cardTotal: number; mastery: MasteryIndex }) {
   const p = useProgress();
   const lvl = levelFor(p.xp);
   const s = streak(p.activity);
@@ -68,6 +70,8 @@ export function ProgressDashboard({ topics, cardTotal }: { topics: TopicLessons[
           </dl>
         </div>
       </div>
+
+      <div className="mt-8"><WeakSpotCoach index={mastery} /></div>
 
       <section className="mt-8 rounded-3xl border border-line bg-surface p-5">
         <h2 className="mb-3 font-display text-lg font-bold">Last 12 weeks</h2>

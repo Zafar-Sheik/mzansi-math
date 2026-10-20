@@ -12,10 +12,25 @@ export interface Progress {
   exams: Record<string, { score: number; total: number; at: number }>;
   /** sequence / match / sorter puzzles solved */
   puzzles: Record<string, number>;
+  /** mock paper id -> attempts (oldest first, last 10 kept) */
+  mocks: Record<string, MockAttempt[]>;
+  /** topic -> generated drill questions answered */
+  drills: Record<string, { right: number; tried: number }>;
   badges: string[];
   /** yyyy-mm-dd -> xp earned that day */
   activity: Record<string, number>;
   stats: { cardsReviewed: number; arenaRounds: number; games: number; calculations: number; focusSessions: number; toolsUsed: number };
+}
+
+export interface MockAttempt {
+  score: number;
+  total: number;
+  at: number;
+  /** minutes used */
+  minutes: number;
+  quick: boolean;
+  /** topic -> [score, total] */
+  byTopic: Record<string, [number, number]>;
 }
 
 export const EMPTY_PROGRESS: Progress = {
@@ -25,6 +40,8 @@ export const EMPTY_PROGRESS: Progress = {
   quizzes: {},
   exams: {},
   puzzles: {},
+  mocks: {},
+  drills: {},
   badges: [],
   activity: {},
   stats: { cardsReviewed: 0, arenaRounds: 0, games: 0, calculations: 0, focusSessions: 0, toolsUsed: 0 },
@@ -67,6 +84,8 @@ export const BADGES: BadgeDef[] = [
   { id: "streak-7", name: "Unstoppable", description: "Learned on 7 days in a row.", emoji: "⚡" },
   { id: "focus", name: "Deep Focus", description: "Finished 3 focus-timer sessions.", emoji: "🎧" },
   { id: "perfect-quiz", name: "Sharp Shooter", description: "Got 100% on a quiz.", emoji: "🎯" },
+  { id: "mock-paper", name: "Dress Rehearsal", description: "Wrote and marked a mock paper.", emoji: "🕰️" },
+  { id: "distinction", name: "Distinction", description: "Scored 80% or more on a mock paper.", emoji: "🏅" },
 ];
 
 /** Badge id awarded for finishing every lesson of a topic (badge ids match topic ids). */
@@ -130,6 +149,9 @@ function checkBadges(p: Progress, topicLessons?: Record<string, string[]>): Prog
   if (s >= 3) next = award(next, "streak-3");
   if (s >= 7) next = award(next, "streak-7");
   if (Object.values(next.quizzes).some((q) => q.total > 0 && q.correct === q.total)) next = award(next, "perfect-quiz");
+  const mocks = Object.values(next.mocks ?? {}).flat();
+  if (mocks.length) next = award(next, "mock-paper");
+  if (mocks.some((m) => m.total > 0 && m.score / m.total >= 0.8)) next = award(next, "distinction");
   if (topicLessons) {
     let all = true;
     for (const [topic, slugs] of Object.entries(topicLessons)) {
@@ -196,4 +218,18 @@ export function solvePuzzle(id: string, xp = 15) {
 
 export function bumpStat(stat: keyof Progress["stats"], by = 1) {
   mutate((s) => ({ ...s, stats: { ...s.stats, [stat]: (s.stats[stat] ?? 0) + by } }));
+}
+
+/** A finished, self-marked mock paper. */
+export function recordMock(id: string, attempt: MockAttempt) {
+  mutate((s) => ({ ...s, mocks: { ...s.mocks, [id]: [...(s.mocks?.[id] ?? []), attempt].slice(-10) } }));
+  addXp(30 + Math.round((attempt.score / Math.max(1, attempt.total)) * 50), "Mock paper marked");
+}
+
+/** One generated drill question answered (feeds the weak-spot coach). */
+export function recordDrill(topic: string, correct: boolean) {
+  mutate((s) => {
+    const d = s.drills?.[topic] ?? { right: 0, tried: 0 };
+    return { ...s, drills: { ...s.drills, [topic]: { right: d.right + (correct ? 1 : 0), tried: d.tried + 1 } } };
+  });
 }

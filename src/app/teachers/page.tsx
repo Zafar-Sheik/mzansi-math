@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Brain, FileText, Map, Palette, Presentation, ShieldCheck, Wrench } from "lucide-react";
+import { BookOpen, Brain, FileText, Map, Palette, Presentation, Printer, ShieldCheck, Timer, Wrench } from "lucide-react";
 import { DOCS } from "@/lib/docs";
 import { EXAM_QUESTIONS, GLOSSARY, LESSONS, QUESTION_BANK } from "@/content";
 import { WIDGET_COUNT } from "@/components/widgets/catalogue";
@@ -40,6 +40,22 @@ export default function TeachersPage() {
           <Link href="/teachers/docs/curriculum-map" className="rounded-xl border border-line bg-surface px-5 py-2.5 font-semibold">CAPS curriculum map</Link>
           <Link href="/teachers/docs/roadmap" className="rounded-xl border border-line bg-surface px-5 py-2.5 font-semibold">Build roadmap</Link>
         </div>
+      </div>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <Link href="/teachers/worksheets">
+          <GlowCard colour="var(--t-algebra)" className="h-full p-5 transition hover:-translate-y-0.5">
+            <div className="flex items-center gap-2 text-brand"><Printer className="h-5 w-5" /><span className="text-xs font-bold tracking-wider text-muted uppercase">Classroom tool</span></div>
+            <h2 className="mt-2 font-display text-xl font-bold">Worksheet generator</h2>
+            <p className="mt-1 text-sm text-muted">Printable worksheets with a full memo from {GENERATORS.length} question generators – a new set every time, or the same set from a shared link.</p>
+          </GlowCard>
+        </Link>
+        <Link href="/exam/mock">
+          <GlowCard colour="var(--t-geometry)" className="h-full p-5 transition hover:-translate-y-0.5">
+            <div className="flex items-center gap-2 text-exam"><Timer className="h-5 w-5" /><span className="text-xs font-bold tracking-wider text-muted uppercase">Exam preparation</span></div>
+            <h2 className="mt-2 font-display text-xl font-bold">Mock papers</h2>
+            <p className="mt-1 text-sm text-muted">Timed Paper 1 and Paper 2 mocks for both grades – write in class or at home, print the paper and memo, or let learners self-mark online.</p>
+          </GlowCard>
+        </Link>
       </div>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {DOCS.map((d) => (
