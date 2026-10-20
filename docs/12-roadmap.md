@@ -47,11 +47,19 @@ MathsMzansi covers the whole CAPS Grade 11 & 12 syllabus for **Algebra, Geometry
 
 **Engine:** the answer checker understands `log_b(x)` (change of base).
 
-## Phase 4 – Grade 12 Geometry & Trigonometry
+## Phase 4 – Grade 12 Geometry & Trigonometry ✅
 
-- Analytical geometry of circles and tangents – *circle & tangent lab*
-- Euclidean geometry: proportionality, similarity – *similar-triangles explorer*
-- Compound & double angles, 2D/3D problems – *3D heights & distances viewer*
+**Content – Grade 12 (10 lessons):**
+
+- Analytical Geometry (3 lessons): the equation of a circle · tangents to a circle · lines, circles & two circles
+- Euclidean Geometry (3 lessons): ratio & the proportionality theorem · similar triangles · right triangles & Pythagoras by similarity – with the examinable proofs
+- Trigonometry (4 lessons): compound angles (incl. the derivation of cos(α − β)) · double angles & identities · equations with compound & double angles · 2D & 3D problems
+
+**Tools:** circle & tangent lab (any centre, drag P round the circle), proportion & similarity lab (slide a line parallel to a side; scale a triangle by k), compound & double-angle lab (the identity vs "the trap", as numbers and graphs), heights & distances lab (two angles of elevation in 2D; a tower on a plane in 3D that you can turn).
+
+**Practice:** 10 new question generators (circle centre/radius, tangents, points on a circle, proportionality, similar triangles, exact compound values, double angles, simplifying, compound/double-angle equations, 2D & 3D heights). 7 new Paper 2 exam questions.
+
+With Phase 4, the whole CAPS Grade 11 & 12 syllabus for Algebra, Geometry and Trigonometry is live.
 
 ## Phase 5 – Exam season
 

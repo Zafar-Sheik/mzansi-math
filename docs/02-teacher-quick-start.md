@@ -17,6 +17,8 @@ Open **Toolkit**. Every interactive tool is there, ready for the projector:
 - **Derivative lab** – shrink h and watch the secant become the tangent: first principles you can *see*.
 - **Cubic lab** and **Optimisation lab** – stationary points and concavity live, and "drag to find the biggest box" before the calculus.
 - **Annuity lab** – change the rate or the term on a loan and watch the total interest jump. Great for a life-skills conversation.
+- **Compound & double angles** – ask the class whether sin(α + β) = sin α + sin β, then test it live. The graph settles the argument.
+- **Heights & distances** – turn the 3D view so learners *see* which triangles are horizontal and which are vertical.
 
 ## 3. Set a lesson as homework
 

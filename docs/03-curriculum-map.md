@@ -52,10 +52,10 @@ Approximate marks per topic (±3) from the DBE examination guidelines – always
 | Polynomials | Remainder & factor theorems · Factorising & solving cubics | Remainder and factor theorems; factorising and solving cubic equations |
 | Differential Calculus | Limits & first principles · Rules of differentiation & tangents · Cubic graphs · Optimisation · Rates of change | Limits; derivative from first principles; rules of differentiation; equations of tangents; cubic graphs (stationary points, concavity, point of inflection); optimisation and rates of change |
 
-## Grade 12 – Geometry & Trigonometry (Phase 4)
+## Grade 12 – Geometry & Trigonometry (Phase 4 ✅)
 
-| Topic | CAPS content |
-|---|---|
-| Analytical Geometry | Equation of a circle (centre anywhere); tangents to circles |
-| Euclidean Geometry | Proportionality theorem; midpoint theorem; similar triangles and their proofs; Pythagoras via similarity |
-| Trigonometry | Compound and double angle identities; general solutions; 2D and 3D problems |
+| Topic | Lessons | CAPS content |
+|---|---|---|
+| Analytical Geometry | The equation of a circle · Tangents to a circle · Lines, circles & two circles | Equation of a circle (centre anywhere); tangents to circles |
+| Euclidean Geometry | Ratio & the proportionality theorem · Similar triangles · Right triangles & Pythagoras by similarity | Proportionality theorem; midpoint theorem; similar triangles and their proofs; Pythagoras via similarity |
+| Trigonometry | Compound angles · Double angles & identities · Equations with compound & double angles · 2D & 3D problems | Compound and double angle identities; general solutions; 2D and 3D problems |

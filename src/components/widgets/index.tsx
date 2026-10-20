@@ -32,6 +32,10 @@ const REGISTRY: Record<WidgetName, React.ComponentType<Record<string, unknown>>>
   "derivative-lab": dynamic(() => import("./derivative-lab").then((m) => m.DerivativeLab as never), { loading }),
   "cubic-lab": dynamic(() => import("./cubic-lab").then((m) => m.CubicLab as never), { loading }),
   "optimisation-lab": dynamic(() => import("./optimisation-lab").then((m) => m.OptimisationLab as never), { loading }),
+  "circle-lab": dynamic(() => import("./circle-lab").then((m) => m.CircleLab as never), { loading }),
+  "proportion-lab": dynamic(() => import("./proportion-lab").then((m) => m.ProportionLab as never), { loading }),
+  "compound-lab": dynamic(() => import("./compound-lab").then((m) => m.CompoundLab as never), { loading }),
+  "heights-lab": dynamic(() => import("./heights-lab").then((m) => m.HeightsLab as never), { loading }),
 };
 
 export function Widget({ name, props }: { name: WidgetName; props?: Record<string, unknown> }) {

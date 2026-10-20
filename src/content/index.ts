@@ -11,6 +11,9 @@ import { SEQUENCES } from "./lessons/g12-sequences";
 import { G12_FUNCTIONS, POLYNOMIALS } from "./lessons/g12-functions";
 import { G12_FINANCE } from "./lessons/g12-finance";
 import { CALCULUS } from "./lessons/g12-calculus";
+import { G12_ANALYTICAL } from "./lessons/g12-analytical";
+import { G12_EUCLIDEAN } from "./lessons/g12-euclidean";
+import { G12_TRIG } from "./lessons/g12-trig";
 import { EXAM_QUESTIONS } from "./exam";
 import type { Lesson, QuizQuestion, Term, Topic } from "./types";
 import { TOPICS } from "@/lib/topics";
@@ -18,7 +21,7 @@ import { TOPICS } from "@/lib/topics";
 const TOPIC_ORDER = TOPICS.map((t) => t.topic);
 
 /** Every lesson, in teaching order (CAPS topic order, Grade 11 then Grade 12). */
-export const LESSONS: Lesson[] = [...EXPONENTS, ...EQUATIONS, ...PATTERNS, ...FUNCTIONS, ...FINANCE, ...ANALYTICAL, ...EUCLIDEAN, ...MEASUREMENT, ...TRIG, ...SEQUENCES, ...G12_FUNCTIONS, ...G12_FINANCE, ...POLYNOMIALS, ...CALCULUS].sort(
+export const LESSONS: Lesson[] = [...EXPONENTS, ...EQUATIONS, ...PATTERNS, ...FUNCTIONS, ...FINANCE, ...ANALYTICAL, ...EUCLIDEAN, ...MEASUREMENT, ...TRIG, ...SEQUENCES, ...G12_FUNCTIONS, ...G12_FINANCE, ...POLYNOMIALS, ...CALCULUS, ...G12_ANALYTICAL, ...G12_EUCLIDEAN, ...G12_TRIG].sort(
   (a, b) => TOPIC_ORDER.indexOf(a.topic) - TOPIC_ORDER.indexOf(b.topic) || a.order - b.order,
 );
 

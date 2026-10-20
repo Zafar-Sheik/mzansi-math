@@ -88,10 +88,11 @@ test.describe("MathsMzansi smoke tests", () => {
     await expect(page.locator("html")).toHaveClass(/calm/);
   });
 
-  test("learn page shows coming-soon phases", async ({ page }) => {
+  test("learn page lists every Grade 12 topic as live", async ({ page }) => {
     await page.goto("/learn?grade=12");
     await expect(page.getByText("Euclidean Geometry").first()).toBeVisible();
-    await expect(page.getByText(/Phase 4/).first()).toBeVisible();
+    await expect(page.getByText(/Similar triangles/).first()).toBeVisible();
+    await expect(page.getByText(/coming soon/i)).toHaveCount(0);
   });
 
   test("phase 2: drag a point in the coordinate lab", async ({ page }) => {
@@ -137,13 +138,26 @@ test.describe("MathsMzansi smoke tests", () => {
     await expect(page.locator(".katex").first()).toBeVisible();
   });
 
+  test("phase 4: compound-angle trap, proportion lab and a 3D lesson", async ({ page }) => {
+    await page.goto("/toolkit", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /^Compound & double angles/ }).click();
+    await expect(page.getByText(/the trap/).first()).toBeVisible();
+    await page.getByRole("button", { name: /^Proportion & similarity lab/ }).click();
+    await expect(page.getByText(/Equal ratios ⇔ DE ∥ BC/)).toBeVisible();
+    await page.getByRole("button", { name: /^Circle & tangent lab/ }).click();
+    await page.getByRole("button", { name: "Tangent at a point", exact: true }).click();
+    await expect(page.getByText(/tangent ⟂ radius/).first()).toBeVisible();
+    await page.goto("/learn/heights-distances-3d", { waitUntil: "networkidle" });
+    await expect(page.getByRole("heading", { name: /2D & 3D problems/ }).first()).toBeVisible();
+  });
+
   test("curriculum API returns JSON", async ({ request }) => {
     const body = await (await request.get("/api/curriculum")).json();
-    expect(body.lessons.length).toBeGreaterThanOrEqual(45);
+    expect(body.lessons.length).toBeGreaterThanOrEqual(55);
     expect(body.topics.length).toBe(17);
   });
 
-  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
+  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/learn/circle-equation", "/learn/similar-triangles", "/learn/compound-angles", "/learn/heights-distances-3d", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
     test(`no sideways scrolling on ${path}`, async ({ page }) => {
       await page.goto(path);
       await page.waitForLoadState("networkidle");

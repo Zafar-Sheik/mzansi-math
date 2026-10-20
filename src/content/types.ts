@@ -129,7 +129,11 @@ export type WidgetName =
   | "polynomial-lab"
   | "derivative-lab"
   | "cubic-lab"
-  | "optimisation-lab";
+  | "optimisation-lab"
+  | "circle-lab"
+  | "proportion-lab"
+  | "compound-lab"
+  | "heights-lab";
 
 export interface Chunk {
   id: string;

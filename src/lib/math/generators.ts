@@ -10,6 +10,7 @@ import { quadraticFromTerms, termOf } from "./patterns";
 import { type Generator, int, nonZero, pick, type Rng } from "./gen-kit";
 import { GEO_TRIG_GENERATORS } from "./generators-geo-trig";
 import { G12_ALGEBRA_GENERATORS } from "./generators-g12-algebra";
+import { G12_GEO_TRIG_GENERATORS } from "./generators-g12-geo-trig";
 
 export type { Generator } from "./gen-kit";
 
@@ -583,6 +584,7 @@ export const GENERATORS: Generator[] = [
   growth, depreciation, effective,
   ...GEO_TRIG_GENERATORS,
   ...G12_ALGEBRA_GENERATORS,
+  ...G12_GEO_TRIG_GENERATORS,
 ];
 
 export function getGenerator(id: string): Generator | undefined {

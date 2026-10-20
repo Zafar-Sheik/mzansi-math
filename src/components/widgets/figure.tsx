@@ -21,6 +21,8 @@ export interface FigureProps {
   ticks?: { from: string; to: string; count?: number }[];
   /** Points to draw without a dot or a name (helpers for lines). */
   hidden?: string[];
+  /** Hidden points that still count towards the figure's size (e.g. the corners of a ground plane). */
+  fit?: string[];
   width?: number;
 }
 
@@ -30,14 +32,14 @@ const ANGLE_COLOURS = ["var(--curve-1)", "var(--curve-2)", "var(--curve-3)", "va
  * Static geometry figure: circles, chords, tangents, labelled angles and
  * equal-length ticks – like the diagrams in a Paper 2 Euclidean question.
  */
-export function Figure({ title, caption, points, circles = [], segments = [], lines = [], angles = [], sideLabels = [], ticks = [], hidden = [], width = 420 }: FigureProps) {
+export function Figure({ title, caption, points, circles = [], segments = [], lines = [], angles = [], sideLabels = [], ticks = [], hidden = [], fit = [], width = 420 }: FigureProps) {
   const id = useId().replace(/:/g, "");
   const centreOf = (c: string | Pt): Pt => (typeof c === "string" ? points[c] : c);
   // Bounding box of everything, with padding for labels.
   const xs: number[] = [];
   const ys: number[] = [];
   Object.entries(points).forEach(([n, [x, y]]) => {
-    if (hidden.includes(n)) return;
+    if (hidden.includes(n) && !fit.includes(n)) return;
     xs.push(x);
     ys.push(y);
   });

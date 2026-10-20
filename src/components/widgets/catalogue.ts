@@ -36,6 +36,10 @@ export const WIDGET_CATALOGUE: { name: WidgetName; title: string; topic: Topic; 
   { name: "derivative-lab", title: "From secant to tangent", topic: "g12-calculus", description: "Watch the average gradient become the derivative as h → 0." },
   { name: "cubic-lab", title: "Cubic sketcher", topic: "g12-calculus", description: "Roots, stationary points, inflection and f′ – live." },
   { name: "optimisation-lab", title: "Optimisation: the open box", topic: "g12-calculus", description: "Find the cut that makes the biggest box – by dragging, then by calculus." },
+  { name: "circle-lab", title: "Circle & tangent lab", topic: "g12-analytical", description: "Any centre, any radius: both forms of the equation, and the tangent at a point you drag." },
+  { name: "proportion-lab", title: "Proportion & similarity lab", topic: "g12-euclidean", description: "Line ∥ one side of a triangle, the midpoint theorem and similar triangles – with live ratios." },
+  { name: "compound-lab", title: "Compound & double angles", topic: "g12-trig", description: "Test sin(α + β) and friends with numbers and graphs – and see why the trap fails." },
+  { name: "heights-lab", title: "Heights & distances", topic: "g12-trig", description: "Angles of elevation in 2D, and a tower on a flat plane in 3D you can turn." },
   { name: "drill", title: "Endless drill (everything)", topic: "g11-exponents", description: "Randomly generated questions from every skill so far, with working." },
 ];
 
