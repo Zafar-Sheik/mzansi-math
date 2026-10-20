@@ -18,7 +18,8 @@ test.describe("MathsMzansi smoke tests", () => {
   test("home page renders hero and strands", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Matric Maths");
-    await expect(page.getByText("Algebra, Geometry & Trigonometry")).toBeVisible();
+    await expect(page.getByText("The whole CAPS syllabus")).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Statistics/ }).first()).toBeVisible();
   });
 
   test("lesson: typed practice is checked, quiz works", async ({ page }) => {
@@ -180,13 +181,29 @@ test.describe("MathsMzansi smoke tests", () => {
     await expect(page).toHaveURL(/t=g11-equations%2Cg11-patterns|t=g11-equations,g11-patterns/);
   });
 
-  test("curriculum API returns JSON", async ({ request }) => {
-    const body = await (await request.get("/api/curriculum")).json();
-    expect(body.lessons.length).toBeGreaterThanOrEqual(55);
-    expect(body.topics.length).toBe(17);
+  test("phase 6: probability simulator, counting lab and a statistics lesson", async ({ page }) => {
+    await page.goto("/toolkit", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /^Probability lab/ }).click();
+    await page.getByRole("button", { name: "Tree diagram & simulation", exact: true }).click();
+    await page.getByRole("button", { name: /Draw ×100/ }).click();
+    await expect(page.getByText("Simulated (100 trials)")).toBeVisible();
+    await page.getByRole("button", { name: /^Counting lab/ }).click();
+    await page.getByRole("button", { name: "Arranging letters", exact: true }).click();
+    await page.getByRole("button", { name: "SOWETO", exact: true }).click();
+    await expect(page.getByText(/Repeated letters \(O\)/)).toBeVisible();
+    await page.goto("/learn?strand=statistics", { waitUntil: "networkidle" });
+    await expect(page.getByText(/Five-number summary, box plots/).first()).toBeVisible();
+    await page.goto("/learn/box-plots", { waitUntil: "networkidle" });
+    await expect(page.getByRole("img", { name: "Data on a number line" }).first()).toBeVisible();
   });
 
-  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/learn/circle-equation", "/learn/similar-triangles", "/learn/compound-angles", "/learn/heights-distances-3d", "/exam/mock", "/exam/mock/g11-p1", "/teachers/worksheets", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
+  test("curriculum API returns JSON", async ({ request }) => {
+    const body = await (await request.get("/api/curriculum")).json();
+    expect(body.lessons.length).toBeGreaterThanOrEqual(65);
+    expect(body.topics.length).toBe(21);
+  });
+
+  for (const path of ["/", "/learn", "/learn/parabolas", "/learn/nominal-effective", "/learn/quadratic-inequalities", "/learn/tangents", "/learn/trig-graphs", "/learn/sine-cosine-area", "/learn/combined-solids", "/learn/cubic-graphs", "/learn/present-value-loans", "/learn/sigma-infinity", "/learn/circle-equation", "/learn/similar-triangles", "/learn/compound-angles", "/learn/heights-distances-3d", "/exam/mock", "/exam/mock/g11-p1", "/teachers/worksheets", "/learn/box-plots", "/learn/venn-diagrams", "/learn/regression-line", "/learn/arrangements", "/flashcards", "/quiz", "/exam", "/toolkit", "/games", "/progress", "/teachers/docs/curriculum-map"]) {
     test(`no sideways scrolling on ${path}`, async ({ page }) => {
       await page.goto(path);
       await page.waitForLoadState("networkidle");

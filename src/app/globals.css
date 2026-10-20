@@ -31,6 +31,8 @@
   --t-algebra: #6d28d9;    /* Algebra (Paper 1) – violet */
   --t-geometry: #c2410c;   /* Geometry – sunset orange */
   --t-trig: #0e7490;       /* Trigonometry – ocean teal */
+  --t-stats: #047857;      /* Statistics – emerald */
+  --t-prob: #4338ca;       /* Probability – indigo */
   --success: #16a34a;
   --warning: #b45309;
   --danger: #dc2626;       /* ONLY used for errors and common mistakes */
@@ -69,6 +71,8 @@
   --t-algebra: #a78bfa;
   --t-geometry: #fb923c;
   --t-trig: #22d3ee;
+  --t-stats: #34d399;
+  --t-prob: #818cf8;
   --success: #4ade80;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -99,6 +103,8 @@
   --t-algebra: #d0b0ff;
   --t-geometry: #ffa060;
   --t-trig: #7fe9ff;
+  --t-stats: #6ff5b8;
+  --t-prob: #b0b8ff;
   --danger: #ff6b6b;
   --ring: #ffd400;
   --graph-grid: #333333;
@@ -124,6 +130,8 @@
   --color-algebra: var(--t-algebra);
   --color-geometry: var(--t-geometry);
   --color-trig: var(--t-trig);
+  --color-stats: var(--t-stats);
+  --color-prob: var(--t-prob);
   --color-exam: var(--exam);
   --color-mzansi: var(--mzansi);
   --color-success: var(--success);

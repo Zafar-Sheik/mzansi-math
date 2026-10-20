@@ -11,6 +11,7 @@ import { type Generator, int, nonZero, pick, type Rng } from "./gen-kit";
 import { GEO_TRIG_GENERATORS } from "./generators-geo-trig";
 import { G12_ALGEBRA_GENERATORS } from "./generators-g12-algebra";
 import { G12_GEO_TRIG_GENERATORS } from "./generators-g12-geo-trig";
+import { STATS_PROB_GENERATORS } from "./generators-stats-prob";
 
 export type { Generator } from "./gen-kit";
 
@@ -585,6 +586,7 @@ export const GENERATORS: Generator[] = [
   ...GEO_TRIG_GENERATORS,
   ...G12_ALGEBRA_GENERATORS,
   ...G12_GEO_TRIG_GENERATORS,
+  ...STATS_PROB_GENERATORS,
 ];
 
 export function getGenerator(id: string): Generator | undefined {

@@ -1,6 +1,6 @@
 # Overview
 
-**MathsMzansi** is an interactive Grade 11 & 12 Mathematics companion for South African learners, built around the **CAPS** curriculum and the **NSC** exam format (Paper 1 and Paper 2). It covers the three strands **Algebra**, **Geometry** and **Trigonometry** – the whole syllabus except statistics and probability.
+**MathsMzansi** is an interactive Grade 11 & 12 Mathematics companion for South African learners, built around the **CAPS** curriculum and the **NSC** exam format (Paper 1 and Paper 2). It covers the whole syllabus in five strands: **Algebra**, **Geometry**, **Trigonometry**, **Statistics** and **Probability**.
 
 It is the sister app of **CodeMzansi** (IT) and **GeoMzansi** (Geography): same learning design, same accessibility features, same "no accounts, no tracking" promise.
 
@@ -21,7 +21,7 @@ It is the sister app of **CodeMzansi** (IT) and **GeoMzansi** (Geography): same 
 
 ## How it's being built
 
-The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 added **Grade 11 Geometry & Trigonometry**, so all of Grade 11 is live; Phase 3 added **Grade 12 Algebra & Calculus** (sequences & series, inverses & logs, annuities, polynomials and differential calculus); Phase 4 added **Grade 12 Geometry & Trigonometry** (circles and tangents, proportionality and similarity, compound and double angles, 2D and 3D problems) – so the whole Grade 11 & 12 syllabus for the three strands is live; Phase 5 adds the exam-season tools: mock papers, the weak-spot coach and printable worksheets. Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
+The full syllabus is a big project, so it ships in **phases** (see *Build roadmap*). Phase 1 delivered the whole platform plus **Grade 11 Algebra & Functions**; Phase 2 added **Grade 11 Geometry & Trigonometry**, so all of Grade 11 is live; Phase 3 added **Grade 12 Algebra & Calculus** (sequences & series, inverses & logs, annuities, polynomials and differential calculus); Phase 4 added **Grade 12 Geometry & Trigonometry** (circles and tangents, proportionality and similarity, compound and double angles, 2D and 3D problems) – so all of Algebra, Geometry and Trigonometry was live; Phase 5 added the exam-season tools (mock papers, the weak-spot coach and printable worksheets); Phase 6 adds **Statistics and Probability** for both grades and more exam questions, so full mock papers are close to 150 marks. Topics that aren't built yet appear on the Learn page as "Phase N – coming soon", so learners and teachers can see what's next.
 
 ## Who it's for
 

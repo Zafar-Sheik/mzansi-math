@@ -69,8 +69,22 @@ With Phase 4, the whole CAPS Grade 11 & 12 syllabus for Algebra, Geometry and Tr
 - New badges: *Dress Rehearsal* (first mock) and *Distinction* (80%+ on a mock).
 - Generated solutions now show each line of working as display maths.
 
+## Phase 6 – Statistics & Probability ✅
+
+**Content (10 lessons):**
+
+- Grade 11 Statistics (3 lessons): five-number summary, box plots & skewness (with outliers) · histograms, frequency polygons & ogives · variance & standard deviation
+- Grade 11 Probability (2 lessons): Venn diagrams & the addition rule (up to three events) · independent events, tree diagrams & two-way tables
+- Grade 12 Statistics (2 lessons): scatter plots & correlation · the least squares regression line
+- Grade 12 Counting & Probability (3 lessons): the fundamental counting principle · arrangements with restrictions · probability with counting
+
+**Tools:** data lab (drag data points: box plot, skewness, outliers, standard deviation), histogram/polygon/ogive lab (read the median and quartiles off the ogive), regression lab (drag points, fit your own line, beat the least squares line), probability lab (Venn diagrams, tree diagrams and a draw simulator), counting lab (codes, slots and letter arrangements with restrictions).
+
+**Practice:** 9 new question generators (five-number summary, mean & SD, grouped data, probability rules, tree diagrams, two-way tables, regression, counting, probability by counting).
+
+**Exam questions:** 22 new questions – 9 on statistics and probability, and 13 more across the other topics. Full mock papers are now 152, 150, 156 and 143 marks (Grade 11 P1, P2; Grade 12 P1, P2).
+
 ## Possible next steps
 
-- Statistics and probability (examined in the NSC papers, outside this app's three strands).
-- More exam questions per topic, so full mocks get closer to 150 marks.
 - Afrikaans translation.
+- A teacher class view (opt-in sharing of mock results).

@@ -9,7 +9,7 @@ export function SiteFooter() {
           <Logo />
           <p className="mt-3 max-w-md text-sm text-muted">
             An interactive Grade 11 &amp; 12 Mathematics companion for South African learners – built around the CAPS curriculum and the
-            NSC exam format (Paper 1 and Paper 2). Algebra, Geometry and Trigonometry, one bite-sized step at a time. Built for every learner,
+            NSC exam format (Paper 1 and Paper 2). Algebra, Geometry, Trigonometry, Statistics and Probability, one bite-sized step at a time. Built for every learner,
             especially those who learn differently. The sister app of CodeMzansi and GeoMzansi.
           </p>
         </div>

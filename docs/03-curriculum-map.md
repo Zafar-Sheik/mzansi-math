@@ -1,6 +1,6 @@
 # CAPS curriculum map
 
-MathsMzansi covers the **Algebra**, **Geometry** and **Trigonometry** strands of CAPS Mathematics for Grades 11 and 12. Statistics, probability (and Grade 12 counting) are examined too but are outside this app's scope.
+MathsMzansi covers the whole of CAPS Mathematics for Grades 11 and 12 in five strands: **Algebra**, **Geometry**, **Trigonometry**, **Statistics** and **Probability** (including Grade 12 counting).
 
 ## How the papers are built
 
@@ -13,10 +13,10 @@ Approximate marks per topic (±3) from the DBE examination guidelines – always
 | Number patterns | 25 | Number patterns, sequences & series | 25 |
 | Functions & graphs | 45 | Functions & graphs | 35 |
 | Finance, growth & decay | 15 | Finance, growth & decay | 15 |
-| Probability *(not in app)* | 20 | Differential calculus | 35 |
-| | | Counting & probability *(not in app)* | 15 |
+| Probability | 20 | Differential calculus | 35 |
+| | | Counting & probability | 15 |
 | **Paper 2** (3 h, 150) | | **Paper 2** (3 h, 150) | |
-| Statistics *(not in app)* | 20 | Statistics *(not in app)* | 20 |
+| Statistics | 20 | Statistics | 20 |
 | Analytical geometry | 30 | Analytical geometry | 40 |
 | Trigonometry | 50 | Trigonometry | 50 |
 | Euclidean geometry & measurement | 50 | Euclidean geometry & measurement | 40 |
@@ -59,3 +59,18 @@ Approximate marks per topic (±3) from the DBE examination guidelines – always
 | Analytical Geometry | The equation of a circle · Tangents to a circle · Lines, circles & two circles | Equation of a circle (centre anywhere); tangents to circles |
 | Euclidean Geometry | Ratio & the proportionality theorem · Similar triangles · Right triangles & Pythagoras by similarity | Proportionality theorem; midpoint theorem; similar triangles and their proofs; Pythagoras via similarity |
 | Trigonometry | Compound angles · Double angles & identities · Equations with compound & double angles · 2D & 3D problems | Compound and double angle identities; general solutions; 2D and 3D problems |
+
+## Grade 11 – Statistics & Probability (Phase 6 ✅)
+
+| Topic | Lessons | CAPS content |
+|---|---|---|
+| Statistics (Paper 2) | Five-number summary, box plots & skewness · Histograms, frequency polygons & ogives · Variance & standard deviation | Five-number summary and box-and-whisker diagrams; symmetric and skewed data; outliers; histograms, frequency polygons and ogives for grouped data; estimating the mean, median and quartiles; variance and standard deviation |
+| Probability (Paper 1) | Venn diagrams & the addition rule · Independent events, trees & two-way tables | Addition rule; mutually exclusive and complementary events; Venn diagrams with up to three events; dependent and independent events; tree diagrams; contingency tables |
+
+## Grade 12 – Statistics & Counting (Phase 6 ✅)
+
+| Topic | Lessons | CAPS content |
+|---|---|---|
+| Statistics (Paper 2) | Scatter plots & correlation · The least squares regression line | Scatter plots and trends; the least squares regression line; the correlation coefficient; predictions (interpolation and extrapolation) |
+| Counting & Probability (Paper 1) | The fundamental counting principle · Arrangements with restrictions · Probability with counting | Fundamental counting principle; factorial notation; arrangements with and without repetition and with restrictions; probability using counting |
+

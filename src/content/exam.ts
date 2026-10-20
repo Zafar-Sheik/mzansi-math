@@ -1,4 +1,5 @@
 import type { ExamQuestion } from "./types";
+import { MORE_EXAM_QUESTIONS } from "./exam-more";
 
 const m = String.raw;
 
@@ -9,7 +10,7 @@ const on = (deg: number): [number, number] => [Math.round(3 * Math.cos((deg * Ma
  * NSC-style exam questions. Every memo line is worth one mark (one tick),
  * like the DBE marking guidelines; follow-on (CA) marks are noted in the memos.
  */
-export const EXAM_QUESTIONS: ExamQuestion[] = [
+const CORE_EXAM_QUESTIONS: ExamQuestion[] = [
   {
     id: "g11-exponents-1",
     topic: "g11-exponents",
@@ -452,3 +453,5 @@ export const EXAM_QUESTIONS: ExamQuestion[] = [
     ],
   },
 ];
+
+export const EXAM_QUESTIONS: ExamQuestion[] = [...CORE_EXAM_QUESTIONS, ...MORE_EXAM_QUESTIONS];

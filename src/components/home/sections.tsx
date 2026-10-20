@@ -21,13 +21,13 @@ export interface TopicSummary {
   lessons: { slug: string; title: string; emoji: string }[];
 }
 
-/** Three strands × two grades. Topics without lessons yet show the phase they arrive in. */
+/** Five strands × two grades. Topics without lessons yet show the phase they arrive in. */
 export function StrandTracks({ topics }: { topics: TopicSummary[] }) {
   const progress = useProgress();
   const [grade, setGrade] = useState<Grade>(12);
   return (
     <section className="mx-auto max-w-7xl px-4 py-20" aria-labelledby="tracks">
-      <SectionHeading eyebrow="Three strands · two grades" title={<span id="tracks">Algebra, Geometry &amp; Trigonometry</span>} description="Every lesson follows the CAPS Grade 11 and 12 Mathematics content and the NSC exam guidelines. We're building it in phases – topics light up as they ship." />
+      <SectionHeading eyebrow="Five strands · two grades" title={<span id="tracks">The whole CAPS syllabus</span>} description="Every lesson follows the CAPS Grade 11 and 12 Mathematics content and the NSC exam guidelines – Paper 1 and Paper 2, every topic." />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {STRANDS.map((st) => {
           const mine = TOPICS.filter((t) => t.strand === st.strand);

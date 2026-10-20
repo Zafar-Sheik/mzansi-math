@@ -9,8 +9,8 @@
 
 export type Grade = 11 | 12;
 
-/** The three strands this app covers. Algebra is NSC Paper 1; Geometry and Trigonometry are Paper 2. */
-export type Strand = "Algebra" | "Geometry" | "Trigonometry";
+/** The five strands of CAPS Mathematics. Algebra and Probability are NSC Paper 1; Geometry, Trigonometry and Statistics are Paper 2. */
+export type Strand = "Algebra" | "Geometry" | "Trigonometry" | "Statistics" | "Probability";
 
 /** NSC Mathematics is written as two 3-hour, 150-mark papers. */
 export type Paper = 1 | 2;
@@ -33,7 +33,11 @@ export type Topic =
   | "g12-calculus"
   | "g12-analytical"
   | "g12-euclidean"
-  | "g12-trig";
+  | "g12-trig"
+  | "g11-statistics"
+  | "g11-probability"
+  | "g12-statistics"
+  | "g12-counting";
 
 export type CalloutVariant = "key" | "tip" | "mistake" | "memory" | "exam" | "break" | "real-world";
 
@@ -133,7 +137,12 @@ export type WidgetName =
   | "circle-lab"
   | "proportion-lab"
   | "compound-lab"
-  | "heights-lab";
+  | "heights-lab"
+  | "data-lab"
+  | "ogive-lab"
+  | "regression-lab"
+  | "probability-lab"
+  | "counting-lab";
 
 export interface Chunk {
   id: string;

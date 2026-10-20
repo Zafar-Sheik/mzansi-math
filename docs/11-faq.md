@@ -8,9 +8,9 @@
 
 **Why does it want "simplest surd form"?** Because the exam does: `√72` and `6√2` are equal, but only `6√2` gets full marks when the question says "simplify".
 
-**Where is Grade 12 / Trigonometry / Geometry?** Coming in later phases – see *Build roadmap*. The Learn page shows each topic's phase.
+**Is the whole syllabus covered?** Yes – every CAPS Grade 11 and 12 Mathematics topic has lessons. See *Build roadmap* for what was added in each phase.
 
-**Is statistics or probability included?** Not at the moment – the app focuses on Algebra, Geometry and Trigonometry.
+**Is statistics or probability included?** Yes – since Phase 6, both grades have Statistics (Paper 2) and Probability, including Grade 12 counting (Paper 1), with lessons, tools, drills and exam questions.
 
 **Animations make me dizzy.** Turn on *Calm mode* in Preferences (or your device's "reduce motion" setting).
 

@@ -41,7 +41,7 @@ export function MockLobby({ papers }: { papers: MockSummary[] }) {
           );
         })}
       </div>
-      <p className="mt-6 text-sm text-muted">Real NSC papers are 150 marks in 3 hours and include statistics and probability, which are outside this app. These mocks cover the Algebra, Geometry and Trigonometry questions only.</p>
+      <p className="mt-6 text-sm text-muted">Real NSC papers are 150 marks in 3 hours. These mocks use the Exam Room questions for every topic on the paper, so their length is close to – but not exactly – a real paper.</p>
     </div>
   );
 }

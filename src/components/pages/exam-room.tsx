@@ -88,7 +88,7 @@ export function ExamRoom({ questions }: { questions: ExamQuestion[] }) {
           </div>
         ))}
       </div>
-      <p className="mt-2 text-xs text-muted">* Statistics and probability are examined too, but are outside this app&apos;s three strands. Mark allocations are approximate (±3) – check the latest DBE guidelines.</p>
+      <p className="mt-2 text-xs text-muted">Mark allocations are approximate (±3) – check the latest DBE examination guidelines.</p>
 
       <details className="mt-4 rounded-2xl border border-line bg-surface p-4">
         <summary className="cursor-pointer font-display font-bold">📝 Exam technique: action verbs, method marks &amp; timing</summary>

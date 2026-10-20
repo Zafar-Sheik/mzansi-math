@@ -19,6 +19,8 @@ Open **Toolkit**. Every interactive tool is there, ready for the projector:
 - **Annuity lab** – change the rate or the term on a loan and watch the total interest jump. Great for a life-skills conversation.
 - **Compound & double angles** – ask the class whether sin(α + β) = sin α + sin β, then test it live. The graph settles the argument.
 - **Heights & distances** – turn the 3D view so learners *see* which triangles are horizontal and which are vertical.
+- **Data lab** and **Regression lab** – drag one data point far away and watch the mean, the standard deviation (or r) react while the median barely moves.
+- **Probability lab** – predict the answer from the tree diagram, then simulate 1 000 draws and see how close the class got.
 
 ## 3. Set a lesson as homework
 

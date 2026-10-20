@@ -40,6 +40,11 @@ export const WIDGET_CATALOGUE: { name: WidgetName; title: string; topic: Topic; 
   { name: "proportion-lab", title: "Proportion & similarity lab", topic: "g12-euclidean", description: "Line ∥ one side of a triangle, the midpoint theorem and similar triangles – with live ratios." },
   { name: "compound-lab", title: "Compound & double angles", topic: "g12-trig", description: "Test sin(α + β) and friends with numbers and graphs – and see why the trap fails." },
   { name: "heights-lab", title: "Heights & distances", topic: "g12-trig", description: "Angles of elevation in 2D, and a tower on a flat plane in 3D you can turn." },
+  { name: "data-lab", title: "Data lab", topic: "g11-statistics", description: "Drag data points: five-number summary, box plot, skewness, outliers and standard deviation – live." },
+  { name: "ogive-lab", title: "Histogram, polygon & ogive", topic: "g11-statistics", description: "Grouped data three ways, with the median and quartiles read off the ogive." },
+  { name: "probability-lab", title: "Probability lab", topic: "g11-probability", description: "Venn diagrams with live probabilities, tree diagrams and a draw simulator." },
+  { name: "regression-lab", title: "Regression & correlation", topic: "g12-statistics", description: "Drag points on a scatter plot, fit your own line and beat the least squares line." },
+  { name: "counting-lab", title: "Counting lab", topic: "g12-counting", description: "Codes, slots and arrangements of letters – with restrictions and probabilities." },
   { name: "drill", title: "Endless drill (everything)", topic: "g11-exponents", description: "Randomly generated questions from every skill so far, with working." },
 ];
 

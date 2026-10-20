@@ -48,4 +48,4 @@ Learner state lives in three `localStorage` keys: `mathsmzansi:progress`, `maths
 
 ## Topics and phases
 
-`src/lib/topics.ts` lists **every** CAPS topic in the three strands for both grades, each with its grade, strand, paper and build phase. Pages show only topics with lessons in filters, and show the rest as "coming soon" cards on the Learn page – so adding a lesson file for a topic is all it takes to "switch it on".
+`src/lib/topics.ts` lists **every** CAPS topic in the five strands for both grades, each with its grade, strand, paper and build phase. Pages show only topics with lessons in filters, and show the rest as "coming soon" cards on the Learn page – so adding a lesson file for a topic is all it takes to "switch it on".
